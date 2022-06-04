@@ -1,5 +1,6 @@
 import React from "react";
 import AuthFormLayout from "../components/layouts/AuthFormLayout";
+import Link from "next/link";
 
 const Login = () => {
     return (
@@ -50,12 +51,14 @@ const Login = () => {
                                 Submit
                             </span>
                         </button>
-                        <a href="/register"
-                           className="rounded-2xl w-[90px] w-1/2 px-4 py-2 text-base capitalize bg-transparent  font-semibold text-center text-blackShade transition duration-200 ease-in bg-white shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2">
+                        <Link href="/register" passHref>
+                            <a href="#"
+                               className="rounded-2xl w-[90px] w-1/2 px-4 py-2 text-base capitalize bg-transparent  font-semibold text-center text-blackShade transition duration-200 ease-in bg-white shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2">
                             <span className="w-full">
                                 Signup
                             </span>
-                        </a>
+                            </a>
+                        </Link>
                     </div>
                 </form>
             </div>
