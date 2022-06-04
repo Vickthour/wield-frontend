@@ -15,7 +15,7 @@ const AuthFormLayout: FC<AuthForm> = ({children}) => {
 
                 <div className="flex flex-col w-full md:w-1/2">
                     <div className="flex justify-center pt-12 md:justify-start md:pl-12 md:-mb-24">
-                        <img src="./img/Logo.png"/>
+                        <img src="./img/logo.png"/>
                     </div>
                     {children}
                 </div>
