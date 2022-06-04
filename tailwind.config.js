@@ -14,6 +14,10 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: ({ colors }) => ({
+      //Custom colors start
+      primaryColor: '#FC3E03',
+      blackShade:'#0E161E',
+      //Custom colors ends
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
