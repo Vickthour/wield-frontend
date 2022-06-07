@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React,{ FC } from "react";
 import { StepWizardChildProps } from "react-step-wizard";
 
 export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
@@ -13,7 +13,7 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
       bar.push(
         <div
         onClick ={() =>(currentStep||1)>=i? goToStep?.(i):null}
-
+        key={i}
           className={`${
             i <= (currentStep || 1) ? "bg-primaryColor" : "bg-white"
           } h-4 w-4 md:h-6 md:w-6 rounded-full`}
@@ -21,12 +21,11 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
       );
     } else {
       bar.push(
-        <>
+        <React.Fragment key={i}>
           <div
             className={`${
               i <= (currentStep || 1) ? "bg-primaryColor" : "bg-white"
             } h-4 w-4 md:h-6 md:w-6 rounded-full`}
-            key={i}
             onClick ={() =>(currentStep||1)>=i? goToStep?.(i):null}
           ></div>
           <div className="flex-1 bg-white h-0.5">
@@ -38,7 +37,7 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
               } h-full transition-all`}
             ></div>
           </div>
-        </>
+        </React.Fragment>
       );
     }
   }
