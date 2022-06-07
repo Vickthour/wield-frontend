@@ -4,7 +4,6 @@ import { useFormData } from "../../context/formContext";
 
 const Success: FC = () => {
   const formHandler = useFormData();
-  console.log(formHandler,'form handler');
 
   return (
     <div className={`${formHandler.done?'':'hidden'} w-full font-roboto `}>
