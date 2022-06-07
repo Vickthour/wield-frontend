@@ -43,7 +43,9 @@ const Social: FC<SocialFormPropsExtended> = ({ goToStep,setDone }) => {
   const onSubmit = handleSubmit((data) => {
     console.log(data);
     formHandler?.setFormValues(data);
+    console.log(formHandler?.data)
     formHandler?.setDone(true);
+
   });
 
   return (
