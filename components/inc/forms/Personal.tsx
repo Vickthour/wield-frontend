@@ -51,7 +51,7 @@ const Personal: FC<PersonalFormPropsExtended> = ({ goToStep }) => {
         console.log("rerendered");
       }
     }
-  }, [countryMonitor]);
+  }, [actualState, countryMonitor, getValues]);
   return (
     <form className="space-y-2.5 mt-4" onSubmit={onSubmit}>
       <Input
