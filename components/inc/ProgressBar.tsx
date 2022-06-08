@@ -46,11 +46,11 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
     <div className="px-8 mt-2">
       <div className="flex w-full items-center">{bar}</div>
       <div className="flex w-full justify-between text-xs md:text-base">
-        <h1 className="translate-x-[-50%] max-w-[90px] lg:max-w-none text-center">
+        <h1 className="translate-x-[-50%] max-w-[64px] text-center">
           Personal Details
         </h1>
         <h1>Account Details</h1>
-        <h1 className="translate-x-[50%] max-w-[90px] lg:max-w-none text-center">
+        <h1 className="translate-x-[50%] max-w-[64px] text-center">
           Social Details
         </h1>
       </div>
