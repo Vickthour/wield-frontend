@@ -7,8 +7,7 @@ const Success: FC = () => {
 
   return (
     <div className={`${formHandler.done?'':'hidden'} w-full font-roboto `}>
-      <div className="grid place-items-center py-32 md:py-48">
-          <h1>{formHandler.done}</h1>
+      <div className="grid place-items-center pt-32 pb-20 md:pt-48">
           <svg
             width="80"
             height="80"
@@ -24,9 +23,9 @@ const Success: FC = () => {
           </svg>
           <p className="mt-4">Sign up completed</p>
       </div>
-      <div className="text-center ">
-          <p >confirm you own from your mailbox</p>
-            <h3 className="font-semibold text-2xl">{formHandler?.data?.email}</h3>
+      <div className="text-center space-y-2">
+          <p >A confirmation link has been sent to your email</p>
+            <h3 className="font-semibold text-xl">{formHandler?.data?.email}</h3>
       </div>
 
     </div>

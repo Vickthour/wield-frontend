@@ -35,8 +35,6 @@ media influencing.e"
         <Image
           src="/../public/img/bg.png"
           alt="gradient background"
-          width={1080}
-          height={900}
           layout="fill"
           quality={90}
           objectFit="cover"
