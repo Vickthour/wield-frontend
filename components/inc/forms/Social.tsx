@@ -24,12 +24,11 @@ export type SocialInputs = {
   interest: string;
 };
 interface SocialFormProps {
-  setDone: (done: boolean) => void;
 }
 export type SocialFormPropsExtended = Partial<StepWizardChildProps> &
   SocialFormProps;
 
-const Social: FC<SocialFormPropsExtended> = ({ goToStep,setDone }) => {
+const Social: FC<SocialFormPropsExtended> = ({ goToStep}) => {
   const {
     register,
     handleSubmit,
@@ -45,7 +44,7 @@ const Social: FC<SocialFormPropsExtended> = ({ goToStep,setDone }) => {
     formHandler?.setFormValues(data);
     console.log(formHandler?.data)
     formHandler?.setDone(true);
-
+    
   });
 
   return (
