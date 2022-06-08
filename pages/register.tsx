@@ -22,16 +22,13 @@ const Register = () => {
         <div className="text-center md:text-left font-montserrat">
           <h1 className="text-2xl  md:text-4xl">Register an Account</h1>
           <p className="mt-0.5 md:mt-1 lg:mt-2">
-          Join us and start sharing, connecting and earning.
+            Join us and start sharing, connecting and earning.
           </p>
-    <FormProvider>
-
-          <MultiStepForm/>
-      <Success />
-
-    </FormProvider>
-
         </div>
+        <FormProvider>
+          <MultiStepForm />
+          <Success />
+        </FormProvider>
       </div>
     </AuthFormLayout>
   );
@@ -40,22 +37,21 @@ const Register = () => {
 const MultiStepForm: FC = () => {
   const formHandler = useFormData();
   const [done, setDone] = React.useState(formHandler?.done);
-  useEffect(()=>{
+  useEffect(() => {
     setDone(formHandler?.done);
-  },[formHandler])
+  }, [formHandler]);
   return (
-      <StepWizard
-        nav={<ProgressBar />}
-        isHashEnabled
-        className={`${
-          formHandler?.done ? "hidden " : "flex flex-col d"
-        } notice-me justify-center`}
-      >
-        <Personal hashKey="personal-details" />
-        <Account hashKey="account-details" />
-        <Social hashKey="social-info" setDone={setDone} />
-      </StepWizard>
-
+    <StepWizard
+      nav={<ProgressBar />}
+      isHashEnabled
+      className={`${
+        formHandler?.done ? "hidden " : "flex flex-col d"
+      } notice-me justify-center`}
+    >
+      <Personal hashKey="personal-details" />
+      <Account hashKey="account-details" />
+      <Social hashKey="social-info" />
+    </StepWizard>
   );
 };
 export default Register;
