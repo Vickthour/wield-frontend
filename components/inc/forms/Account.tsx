@@ -5,7 +5,7 @@ import { StepWizardChildProps } from "react-step-wizard";
 import { ErrorMessage, Input } from "../../base";
 import { useFormData } from "../../context/formContext";
 
-type AccountInputs = {
+export type AccountInputs = {
   email: string;
   username: string;
   phoneNumber: string;

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useFormData } from "../../context/formContext";
 import { ErrorMessage } from "../../base";
 
-type PersonalInputs = {
+export type PersonalInputs = {
   "full name": string;
   gender: "male" | "female";
   country: string;
