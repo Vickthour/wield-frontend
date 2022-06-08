@@ -13,14 +13,14 @@ const Home: NextPage = () => {
             <Link href="/login" passHref>
               <a
                 href="#"
-                className="uppercase py-1.5 px-2 text-sm md:py-2 md:px-4 bg-transparent border-2 border-white text-white hover:text-black hover:font-semibold active:scale-95 origin-center hover:bg-white transition-all md:text-base mr-4 hover:bg-primaryLighterColor rounded-[9999px]"
+                className="uppercase py-1.5 px-2 text-sm md:py-2 md:px-4 bg-transparent border-2 border-white text-white hover:text-black hover:font-semibold active:scale-95 origin-center hover:bg-white transition-all md:text-base mr-4 hover:bg-primaryLighterColor rounded-full"
               >
                 Get started
               </a>
             </Link>
           </div>
         </header>
-        <div className=" px-6 flex flex-col justify-between items-center relative pt-8 h-full items-center flex-1">
+        <div className=" px-6 flex flex-col justify-between relative pt-8 h-full items-center flex-1">
           <div className="flex flex-col gap-4">
             <h1 className="font-semibold w-full text-4xl  text-center md:text-5xl  text-white xl:leading-[85.33px] xl:text-[70px] max-w-[830px]">
               Connecting People brand and influencing
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             <div className="flex items-center justify-center mb-8">
               <a
                 href="#"
-                className="uppercase py-2 px-4 bg-primaryColor hover:bg-primaryLightColor active:scale-95 origin-center border-2 border-transparent text-white text-md mr-4  rounded-[9999px]"
+                className="uppercase py-2 px-4 bg-primaryColor hover:bg-primaryLightColor active:scale-95 origin-center border-2 border-transparent text-white text-md mr-4  rounded-full"
               >
                 Get started
               </a>

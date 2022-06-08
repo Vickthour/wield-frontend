@@ -6,6 +6,24 @@ module.exports = {
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
+    extend:{
+      animation:{
+        'scale-up':'scale-up 0.5s ease-in-out'
+      },
+      keyframes:{
+        'scale-up':{
+          '0%':{
+            transform:'scale(.3)'
+          },
+          '85%':{
+            transform:'scale(1.3)'
+          },
+          '100%':{
+            transform:'scale(1)'
+          },
+        }
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -19,6 +37,7 @@ module.exports = {
       primaryColor: '#FC3E03',
       primaryLightColor: 'rgba(252, 62, 3,0.8)',
       blackShade:'#0E161E',
+      background:'#EEEEEE',
       //Custom colors ends
       inherit: colors.inherit,
       current: colors.current,

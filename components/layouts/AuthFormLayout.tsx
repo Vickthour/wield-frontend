@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState, useEffect } from "react";
+import { FC, ReactNode, useState, useEffect, SetStateAction, Dispatch } from "react";
 import Image from "next/image";
 import { Step1, Step2, Step3, Step4 } from "../carousel";
 interface AuthForm {
@@ -23,37 +23,41 @@ const AuthFormLayout: FC<AuthForm> = ({ children }) => {
     };
   }, [activeIndex]);
   return (
-    <main className="container mx-auto px-4 min-h-screen flex flex-col">
-      <div className="flex justify-center pt-12 md:justify-start  ">
-        <div className="relative ">
-          <Image src="/../public/img/logo.png" width={152} height={57} />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-5 w-full flex-1 items-center">
-        <div className="lg:col-span-3 flex flex-col md:h-full order-2 md:order-1">
-          <div className="md:flex-[4] md:items-end flex items-center">
-              <CurrentImage />
-          </div>
-          <div className="md:flex-[2]">
-              <div className="flex  items-center w-full justify-center gap-4">
-                {CarouselImages.map((image, index) => (
-                  <Dots active={activeIndex === index} key={index} />
-                ))}
-              </div>
+    <main className="bg-background overflow-hidden">
+      <div className="container mx-auto px-4 min-h-screen flex flex-col">
+        <div className="flex justify-center py-2 lg:pt-12 md:justify-start  ">
+          <div className="relative ">
+            <Image src="/../public/img/logo.png" width={152} height={57} />
           </div>
         </div>
-        <div className="lg:col-span-2 order-1 md:order-2">{children}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 w-full flex-1 items-center gap-x-10">
+          <div className="xl:col-span-3 md:flex-col md:h-full order-2 md:order-1 hidden md:flex">
+            <div className="md:flex-[4] md:items-end flex items-center justify-center">
+                <CurrentImage />
+            </div>
+            <div className="md:flex-[2] ">
+                <div className="flex  items-center w-full justify-center gap-4">
+                  {CarouselImages.map((image, index) => (
+                    <Dots active={activeIndex === index} setActive={setActiveIndex} index={index} key={index} />
+                  ))}
+                </div>
+            </div>
+          </div>
+          <div className="xl:col-span-2 order-1 md:order-2 h-full">{children}</div>
+        </div>
       </div>
     </main>
   );
 };
 interface DotsProps {
   active: boolean;
+  index:number;
+  setActive:Dispatch<SetStateAction<number>>;
 }
-const Dots: FC<DotsProps> = ({ active }) => {
+const Dots: FC<DotsProps> = ({ active,setActive,index }) => {
   if (active) {
-    return <div className="h-6 w-6 bg-gray-200 rounded-full"></div>;
+    return <div onClick={()=>{setActive(index)}} className="h-6 w-6 bg-white rounded-full"></div>;
   }
-  return <div className="h-4 w-4 bg-gray-400 rounded-full"></div>;
+  return <div onClick={()=>{setActive(index)}} className="h-4 w-4 bg-gray-400 rounded-full"></div>;
 };
 export default AuthFormLayout;
