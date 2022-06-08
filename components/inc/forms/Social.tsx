@@ -6,7 +6,7 @@ import { ErrorMessage, Input } from "../../base";
 import Link from "next/link";
 import { useFormData } from "../../context/formContext";
 
-type SocialInputs = {
+export type SocialInputs = {
   "full name": string;
   gender: "male" | "female";
   country: string;
