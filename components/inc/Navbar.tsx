@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="relative ">
         <Link href="/">
           <Image
-            src="/../public/img/logo.png"
+            src="/img/logo.png"
             width={152}
             height={57}
             alt="Weild Logo"
