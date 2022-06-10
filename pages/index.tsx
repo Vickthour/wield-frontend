@@ -33,7 +33,7 @@ media influencing.e"
       </Head>
       <main className="font-montserrat relative flex  min-h-screen flex-col overflow-hidden bg-gray-900 bg-cover bg-no-repeat">
         <Image
-          src="/../public/img/bg.png"
+          src="/img/bg.png"
           alt="gradient background"
           layout="fill"
           quality={90}
@@ -45,7 +45,7 @@ media influencing.e"
           <div className="container mx-auto flex items-center justify-between px-6">
             <div className="text-3xl font-black uppercase text-gray-800 dark:text-white">
               <Image
-                src="/../public/img/logo-white.png"
+                src="/img/logo-white.png"
                 alt="wield white Logo"
                 width={152}
                 height={57}
