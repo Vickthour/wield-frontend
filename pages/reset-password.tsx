@@ -17,15 +17,18 @@ const ResetPass = () => {
     formState: { errors },
   } = useForm<PasswordReset>();
   return (
-    <main className="bg-background min-h-screen flex">
-      <div className="container mx-auto px-4 flex flex-col">
+    <main className="flex min-h-screen bg-background">
+      <div className="container mx-auto flex flex-col px-4">
         <Navbar />
-        <div className="flex-1 pt-10 flex justify-center md:items-center">
-          <form className="w-11/12 max-w-xl flex flex-col" onSubmit={handleSubmit(data=>console.log(data))}>
-            <h1 className="font-medium text-center font-montserrat text-2xl">
+        <div className="flex flex-1 justify-center pt-10 md:items-center">
+          <form
+            className="flex w-11/12 max-w-xl flex-col"
+            onSubmit={handleSubmit((data) => console.log(data))}
+          >
+            <h1 className="font-montserrat text-center text-2xl font-medium">
               Reset Password
             </h1>
-            <div className="flex flex-col gap-4 mt-4">
+            <div className="mt-4 flex flex-col gap-4">
               <Input.Password
                 label="Password"
                 register={register("newPassword", {
@@ -53,16 +56,18 @@ const ResetPass = () => {
                 label="Confirm Password"
                 register={register("confirmNewPassword", {
                   required: "password confirmation is required",
-                  validate:(value) => value===getValues("newPassword") || "passwords aren't equal required",
+                  validate: (value) =>
+                    value === getValues("newPassword") ||
+                    "passwords aren't equal required",
                 })}
                 id="confirm-new-password"
                 showIcon
               />
-                <ErrorMessage error={errors?.confirmNewPassword?.message} />
+              <ErrorMessage error={errors?.confirmNewPassword?.message} />
             </div>
             <div>
               <button
-                className="rounded-full mt-10 block w-9/12 mx-auto py-4 md:w-full md:py-6 text-center font-semibold active:scale-95 disabled:active:scale-100 origin-center disabled:bg-zinc-300 bg-primaryColor text-white"
+                className="mx-auto mt-10 block w-9/12 origin-center rounded-full bg-primaryColor py-4 text-center font-semibold text-white active:scale-95 disabled:bg-zinc-300 disabled:active:scale-100 md:w-full md:py-6"
                 aria-label="next form"
                 type="submit"
                 disabled={Boolean(errors.newPassword?.message)}

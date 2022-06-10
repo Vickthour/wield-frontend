@@ -19,7 +19,7 @@ const Register = () => {
   return (
     <AuthFormLayout>
       <div className="flex h-full  flex-col md:justify-center">
-        <div className="text-center md:text-left font-montserrat">
+        <div className="font-montserrat text-center md:text-left">
           <h1 className="text-2xl  md:text-4xl">Register an Account</h1>
           <p className="mt-0.5 md:mt-1 lg:mt-2">
             Join us and start sharing, connecting and earning.
@@ -45,7 +45,7 @@ const MultiStepForm: FC = () => {
       nav={<ProgressBar />}
       isHashEnabled
       className={`${
-        formHandler?.done ? "hidden " : "flex flex-col d"
+        formHandler?.done ? "hidden " : "d flex flex-col"
       } notice-me justify-center`}
     >
       <Personal hashKey="personal-details" />

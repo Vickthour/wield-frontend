@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-center py-2 lg:pt-12 md:justify-start  ">
+    <div className="flex justify-center py-2 md:justify-start lg:pt-12  ">
       <div className="relative ">
         <Link href="/">
           <Image

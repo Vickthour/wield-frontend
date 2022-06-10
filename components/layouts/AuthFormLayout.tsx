@@ -1,4 +1,11 @@
-import { FC, ReactNode, useState, useEffect, SetStateAction, Dispatch } from "react";
+import {
+  FC,
+  ReactNode,
+  useState,
+  useEffect,
+  SetStateAction,
+  Dispatch,
+} from "react";
 import { Step1, Step2, Step3, Step4 } from "../carousel";
 import Navbar from "../inc/Navbar";
 interface AuthForm {
@@ -23,23 +30,30 @@ const AuthFormLayout: FC<AuthForm> = ({ children }) => {
     };
   }, [activeIndex]);
   return (
-    <main className="bg-background overflow-hidden">
-      <div className="container mx-auto px-4 min-h-screen flex flex-col">
-        <Navbar/>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 w-full flex-1 items-center gap-x-10">
-          <div className="xl:col-span-3 md:flex-col md:h-full order-2 md:order-1 hidden md:flex">
-            <div className="md:flex-[4] md:items-end flex items-center justify-center">
-                <CurrentImage />
+    <main className="overflow-hidden bg-background">
+      <div className="container mx-auto flex min-h-screen flex-col px-4">
+        <Navbar />
+        <div className="grid w-full flex-1 grid-cols-1 items-center gap-x-10 md:grid-cols-2 xl:grid-cols-5">
+          <div className="order-2 hidden md:order-1 md:flex md:h-full md:flex-col xl:col-span-3">
+            <div className="flex items-center justify-center md:flex-[4] md:items-end">
+              <CurrentImage />
             </div>
             <div className="md:flex-[2] ">
-                <div className="flex  items-center w-full justify-center gap-4">
-                  {CarouselImages.map((image, index) => (
-                    <Dots active={activeIndex === index} setActive={setActiveIndex} index={index} key={index} />
-                  ))}
-                </div>
+              <div className="flex  w-full items-center justify-center gap-4">
+                {CarouselImages.map((image, index) => (
+                  <Dots
+                    active={activeIndex === index}
+                    setActive={setActiveIndex}
+                    index={index}
+                    key={index}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          <div className="xl:col-span-2 order-1 md:order-2 h-full">{children}</div>
+          <div className="order-1 h-full md:order-2 xl:col-span-2">
+            {children}
+          </div>
         </div>
       </div>
     </main>
@@ -47,13 +61,27 @@ const AuthFormLayout: FC<AuthForm> = ({ children }) => {
 };
 interface DotsProps {
   active: boolean;
-  index:number;
-  setActive:Dispatch<SetStateAction<number>>;
+  index: number;
+  setActive: Dispatch<SetStateAction<number>>;
 }
-const Dots: FC<DotsProps> = ({ active,setActive,index }) => {
+const Dots: FC<DotsProps> = ({ active, setActive, index }) => {
   if (active) {
-    return <div onClick={()=>{setActive(index)}} className="h-6 w-6 bg-white rounded-full"></div>;
+    return (
+      <div
+        onClick={() => {
+          setActive(index);
+        }}
+        className="h-6 w-6 rounded-full bg-white"
+      ></div>
+    );
   }
-  return <div onClick={()=>{setActive(index)}} className="h-4 w-4 bg-gray-400 rounded-full"></div>;
+  return (
+    <div
+      onClick={() => {
+        setActive(index);
+      }}
+      className="h-4 w-4 rounded-full bg-gray-400"
+    ></div>
+  );
 };
 export default AuthFormLayout;

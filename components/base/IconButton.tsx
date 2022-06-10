@@ -1,16 +1,20 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode } from "react";
 
-interface IconButtonProps{
-    icon:ReactNode;
-    className?:string;
-    onClick?:()=>void;
+interface IconButtonProps {
+  icon: ReactNode;
+  className?: string;
+  onClick?: () => void;
 }
-const IconButton:FC<IconButtonProps> = ({icon,className,onClick}) => {
+const IconButton: FC<IconButtonProps> = ({ icon, className, onClick }) => {
   return (
-    <button onClick={onClick} type='button' className={`active:scale-95 origin-center h-14 w-14 rounded-full grid place-items-center  ${className}`}>
-        {icon}
+    <button
+      onClick={onClick}
+      type="button"
+      className={`grid h-14 w-14 origin-center place-items-center rounded-full active:scale-95  ${className}`}
+    >
+      {icon}
     </button>
-  )
-}
+  );
+};
 
-export default IconButton
+export default IconButton;
