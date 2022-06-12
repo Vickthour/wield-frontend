@@ -2,30 +2,53 @@ import { Listbox, Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Control, useController } from "react-hook-form";
 
-interface options{
-    id:string;
-    name:string
+interface options {
+  id: string;
+  name: string;
 }
 interface ListBoxProps {
   label: string;
   options: options[];
   className?: string;
-control: Control<any>;
+  control: Control<any>;
 
-formName:string;
+  formName: string;
 }
-export default function ListBox({ label, options,className,control,formName }: ListBoxProps) {
-    const {
-        field: { value, onChange }
-      } = useController({name:formName,rules:{required:`${label} is required`},control},);
-    return (
-    <Listbox value={value} onChange={onChange} as="div" className={`relative block  text-left ${className? className :''} font-roboto`}>
-        <Listbox.Button type="button" className={`flex relative w-full justify-between items-center rounded-md bg-white  px-4 py-5  text-gray-400 hover:bg-opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75   `}>
-          
-          {value?<h3 className="absolute top-0 text-gray-700 text-sm">{label}</h3>:''}
-          {value?value:label}
-          <ChevronDown />
-        </Listbox.Button>
+export default function ListBox({
+  label,
+  options,
+  className,
+  control,
+  formName,
+}: ListBoxProps) {
+  const {
+    field: { value, onChange },
+  } = useController({
+    name: formName,
+    rules: { required: `${label} is required` },
+    control,
+  });
+  return (
+    <Listbox
+      value={value}
+      onChange={onChange}
+      as="div"
+      className={`relative block  text-left ${
+        className ? className : ""
+      } font-roboto`}
+    >
+      <Listbox.Button
+        type="button"
+        className={`relative flex w-full items-center justify-between rounded-md bg-white  px-4 py-5  text-gray-400 hover:bg-opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75   `}
+      >
+        {value ? (
+          <h3 className="absolute top-0 text-sm text-gray-700">{label}</h3>
+        ) : (
+          ""
+        )}
+        {value ? value : label}
+        <ChevronDown />
+      </Listbox.Button>
 
       <Transition
         as={Fragment}
@@ -36,13 +59,13 @@ export default function ListBox({ label, options,className,control,formName }: L
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Listbox.Options className="absolute right-0 max-h-60 z-10 overflow-y-scroll mt-2 w-full origin-top divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Listbox.Options className="absolute right-0 z-10 mt-2 max-h-60 w-full origin-top divide-y divide-gray-100 overflow-y-scroll rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           {options.map((option, index) => (
             <div className="px-1 py-1 " key={index}>
-              <Listbox.Option  key={index} id={option.id} value={option.name}>
+              <Listbox.Option key={index} id={option.id} value={option.name}>
                 {({ active }) => (
                   <button
-                  type="button"
+                    type="button"
                     className={`${
                       active ? "bg-gray-300 text-white" : "text-gray-900"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}

@@ -31,9 +31,9 @@ media influencing.e"
         <meta property="og:locale" content="en_US" />
         <meta property="article:author" content="" />
       </Head>
-      <main className="bg-gray-900 bg-no-repeat bg-cover  relative overflow-hidden min-h-screen font-montserrat flex flex-col">
+      <main className="font-montserrat relative flex  min-h-screen flex-col overflow-hidden bg-gray-900 bg-cover bg-no-repeat">
         <Image
-          src="/../public/img/bg.png"
+          src="/img/bg.png"
           alt="gradient background"
           layout="fill"
           quality={90}
@@ -41,11 +41,11 @@ media influencing.e"
           objectPosition={"center"}
           priority
         />
-        <header className="h-24 sm:h-32 flex items-center z-30 w-full">
-          <div className="container mx-auto px-6 flex items-center justify-between">
-            <div className="uppercase text-gray-800 dark:text-white font-black text-3xl">
+        <header className="z-30 flex h-24 w-full items-center sm:h-32">
+          <div className="container mx-auto flex items-center justify-between px-6">
+            <div className="text-3xl font-black uppercase text-gray-800 dark:text-white">
               <Image
-                src="/../public/img/logo-white.png"
+                src="/img/logo-white.png"
                 alt="wield white Logo"
                 width={152}
                 height={57}
@@ -54,44 +54,43 @@ media influencing.e"
             <Link href="/login" passHref className="">
               <a
                 href="#"
-                className="hidden md:inline uppercase py-1.5 px-2 text-sm md:py-2 md:px-4 bg-transparent border-2 border-white text-white hover:text-black hover:font-semibold active:scale-95 origin-center hover:bg-white transition-all md:text-base mr-4 hover:bg-primaryLighterColor rounded-full"
+                className="hover:bg-primaryLighterColor mr-4 hidden origin-center rounded-full border-2 border-white bg-transparent py-1.5 px-2 text-sm uppercase text-white transition-all hover:bg-white hover:font-semibold hover:text-black active:scale-95 md:inline md:py-2 md:px-4 md:text-base"
               >
                 Get started
               </a>
             </Link>
           </div>
         </header>
-        <div className=" px-6 flex flex-col justify-between relative pt-8 h-full items-center flex-1">
+        <div className=" relative flex h-full flex-1 flex-col items-center justify-between px-6 pt-8">
           <div className="flex flex-col gap-4">
-            <h1 className="font-semibold w-full text-4xl  text-center md:text-5xl  text-white xl:leading-[85.33px] xl:text-[70px] max-w-[830px]">
+            <h1 className="w-full max-w-[830px] text-center  text-4xl font-semibold  text-white md:text-5xl xl:text-[70px] xl:leading-[85.33px]">
               Connecting People brand and influencing
             </h1>
-            <p className="font-light max-w-[490px] mx-auto w-full text-xl text-white text-center py-8">
+            <p className="mx-auto w-full max-w-[490px] py-8 text-center text-xl font-light text-white">
               Promote brand, share contents and earn money Join thousands of
               people to decentralized social media influencing.
             </p>
-            <div className="flex items-center justify-center mb-8">
+            <div className="mb-8 flex items-center justify-center">
               <a
                 href="#"
-                className="uppercase py-2 px-4 bg-primaryColor hover:bg-primaryLightColor active:scale-95 origin-center border-2 border-transparent text-white text-md mr-4  rounded-full"
+                className="text-md mr-4 origin-center rounded-full border-2 border-transparent bg-primaryColor py-2 px-4 uppercase text-white hover:bg-primaryLightColor  active:scale-95"
               >
                 Get started
               </a>
             </div>
           </div>
-          <div className="mt-6 md:mt-0   flex items-end justify-center w-[85vw] max-w-[1015px] xl:max-w-[1140px] glow">
-            <div className="mid:hidden relative">
+          <div className="glow mt-6   flex w-[85vw] max-w-[1015px] items-end justify-center md:mt-0 xl:max-w-[1140px]">
+            <div className="relative mid:hidden">
               <Image
                 src="/img/product_preview(mobile).png"
-                className="w-[90vw] max-w-6xl mx-auto "
+                className="mx-auto w-[90vw] max-w-6xl "
                 alt="product preview"
                 height={2913}
                 width={4096}
                 quality={60}
-                
               />
             </div>
-            <div className="hidden mid:block relative">
+            <div className="relative hidden mid:block">
               <Image
                 src="/img/product_preview.png"
                 className=" mx-auto "

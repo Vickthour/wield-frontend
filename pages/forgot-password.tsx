@@ -31,7 +31,7 @@ const ForgotPassword = () => {
   return (
     <AuthFormLayout>
       <div className="flex h-full  flex-col md:justify-center">
-        <div className="text-center md:text-left font-montserrat">
+        <div className="font-montserrat text-center md:text-left">
           <h1 className="text-2xl  md:text-4xl">Forgot Password</h1>
           <p className="mt-0.5 md:mt-1 lg:mt-2">
             Enter your email address to reset your password
@@ -39,7 +39,7 @@ const ForgotPassword = () => {
         </div>
 
         {done ? (
-          <div className="grid place-items-center py-32 md:py-48 font-montserrat">
+          <div className="font-montserrat grid place-items-center py-32 md:py-48">
             <p className="">A password reset link as been sent to</p>
             <h3 className="font-xl font-semibold">{getValues("email")}</h3>
           </div>
@@ -60,7 +60,7 @@ const ForgotPassword = () => {
             <ErrorMessage error={errors?.email?.message} />
             <div>
               <button
-                className="rounded-full mt-10 block w-9/12 mx-auto py-4 md:w-full md:py-6 text-center font-semibold active:scale-95 disabled:active:scale-100 origin-center disabled:bg-zinc-300 bg-primaryColor text-white"
+                className="mx-auto mt-10 block w-9/12 origin-center rounded-full bg-primaryColor py-4 text-center font-semibold text-white active:scale-95 disabled:bg-zinc-300 disabled:active:scale-100 md:w-full md:py-6"
                 aria-label="next form"
                 type="submit"
                 disabled={Boolean(errors.email?.message)}
@@ -70,7 +70,7 @@ const ForgotPassword = () => {
             </div>
           </form>
         )}
-        <p className="font-montserrat text-center mt-4">
+        <p className="font-montserrat mt-4 text-center">
           Already a use?{" "}
           <Link href={"/login"} passHref>
             <a href="#" className="text-primaryColor">
@@ -80,7 +80,7 @@ const ForgotPassword = () => {
         </p>
         <div className="font-montserrat mt-8 lg:mt-10">
           <p className="text-center ">OR you can join with</p>
-          <div className="flex gap-4 justify-center mt-2">
+          <div className="mt-2 flex justify-center gap-4">
             <IconButton icon={<FacebookIcon />} className="bg-[#345FCB1A]" />
             <IconButton icon={<GoogleIcon />} className="bg-[#FF685B0F]" />
             <IconButton icon={<LinkedInIcon />} className="bg-[#1976D21A]" />

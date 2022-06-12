@@ -1,10 +1,10 @@
-import React,{ FC } from "react";
+import React, { FC } from "react";
 import { StepWizardChildProps } from "react-step-wizard";
 
 export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
   totalSteps,
   currentStep,
-  goToStep
+  goToStep,
 }) => {
   const bar = [];
 
@@ -12,11 +12,11 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
     if (i === 3) {
       bar.push(
         <div
-        onClick ={() =>(currentStep||1)>=i? goToStep?.(i):null}
-        key={i}
+          onClick={() => ((currentStep || 1) >= i ? goToStep?.(i) : null)}
+          key={i}
           className={`${
             i <= (currentStep || 1) ? "bg-primaryColor" : "bg-white"
-          } h-4 w-4 md:h-6 md:w-6 rounded-full`}
+          } h-4 w-4 rounded-full md:h-6 md:w-6`}
         ></div>
       );
     } else {
@@ -25,15 +25,15 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
           <div
             className={`${
               i <= (currentStep || 1) ? "bg-primaryColor" : "bg-white"
-            } h-4 w-4 md:h-6 md:w-6 rounded-full`}
-            onClick ={() =>(currentStep||1)>=i? goToStep?.(i):null}
+            } h-4 w-4 rounded-full md:h-6 md:w-6`}
+            onClick={() => ((currentStep || 1) >= i ? goToStep?.(i) : null)}
           ></div>
-          <div className="flex-1 bg-white h-0.5">
+          <div className="h-0.5 flex-1 bg-white">
             <div
               className={`${
                 i < (currentStep || 1)
-                  ? "bg-primaryColor w-full"
-                  : "bg-white w-0"
+                  ? "w-full bg-primaryColor"
+                  : "w-0 bg-white"
               } h-full transition-all`}
             ></div>
           </div>
@@ -43,14 +43,14 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
   }
 
   return (
-    <div className="px-8 mt-2">
+    <div className="mt-2 px-8">
       <div className="flex w-full items-center">{bar}</div>
       <div className="flex w-full justify-between text-xs md:text-base">
-        <h1 className="translate-x-[-50%] max-w-[64px] text-center">
+        <h1 className="max-w-[64px] translate-x-[-50%] text-center">
           Personal Details
         </h1>
         <h1>Account Details</h1>
-        <h1 className="translate-x-[50%] max-w-[64px] text-center">
+        <h1 className="max-w-[64px] translate-x-[50%] text-center">
           Social Details
         </h1>
       </div>

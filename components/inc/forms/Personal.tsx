@@ -53,7 +53,7 @@ const Personal: FC<PersonalFormPropsExtended> = ({ goToStep }) => {
     }
   }, [actualState, countryMonitor, getValues]);
   return (
-    <form className="space-y-2.5 mt-4" onSubmit={onSubmit}>
+    <form className="mt-4 space-y-2.5" onSubmit={onSubmit}>
       <Input
         id="full-name"
         label="Full Name"
@@ -70,7 +70,7 @@ const Personal: FC<PersonalFormPropsExtended> = ({ goToStep }) => {
         ]}
       />
       <ErrorMessage error={errors.gender?.message} />
-      <div className="flex flex-col md:flex-row w-full gap-2.5">
+      <div className="flex w-full flex-col gap-2.5 md:flex-row">
         <div className="flex-1">
           <ListBox
             control={control}
@@ -108,13 +108,13 @@ const Personal: FC<PersonalFormPropsExtended> = ({ goToStep }) => {
 
       <div>
         <button
-          className="rounded-full mt-[50px!important] block w-9/12 mx-auto py-4 md:w-full md:py-6 text-center disabled:bg-gray-300 bg-primaryColor text-white"
+          className="mx-auto mt-[50px!important] block w-9/12 rounded-full bg-primaryColor py-4 text-center text-white disabled:bg-gray-300 md:w-full md:py-6"
           aria-label="next form"
           type="submit"
         >
           NEXT
         </button>
-        <p className="font-roboto text-center mt-4">
+        <p className="font-roboto mt-4 text-center">
           Already have an Account?{" "}
           <Link href={"/login"} passHref>
             <a href="#" className="text-primaryColor">
