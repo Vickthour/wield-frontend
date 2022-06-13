@@ -76,7 +76,7 @@ const Dots: FC<DotsProps> = ({ active, setActive, index }) => {
         onClick={() => {
           setActive(index);
         }}
-        className="h-6 w-6 rounded-full bg-white"
+        className="h-6 w-6 rounded-full bg-gray-200"
       ></div>
     );
   }
@@ -85,7 +85,7 @@ const Dots: FC<DotsProps> = ({ active, setActive, index }) => {
       onClick={() => {
         setActive(index);
       }}
-      className="h-4 w-4 rounded-full bg-gray-400"
+      className="h-4 w-4 rounded-full bg-gray-500"
     ></div>
   );
 };
