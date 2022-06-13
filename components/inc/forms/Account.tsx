@@ -90,7 +90,7 @@ const Account: FC<Partial<StepWizardChildProps> & AccountFormProps> = ({
       <ErrorMessage error={errors.password?.message} />
       <div>
         <button
-          className="mx-auto mt-[50px!important] block w-9/12 rounded-full bg-primaryColor py-4 text-center text-white disabled:bg-gray-300 md:w-full md:py-6"
+          className="mx-auto mt-[50px!important] block w-9/12 rounded-full bg-gradient-to-tr from-primaryColor via-primaryColor to-[#FF685B1A] py-4 text-center text-white disabled:bg-gray-300 md:w-full md:py-6"
           aria-label="next form"
           type="submit"
         >

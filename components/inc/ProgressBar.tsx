@@ -15,7 +15,7 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
           onClick={() => ((currentStep || 1) >= i ? goToStep?.(i) : null)}
           key={i}
           className={`${
-            i <= (currentStep || 1) ? "bg-primaryColor" : "bg-white"
+            i <= (currentStep || 1) ? "bg-primaryColor" : "bg-gray-200"
           } h-4 w-4 rounded-full md:h-6 md:w-6`}
         ></div>
       );
@@ -24,16 +24,16 @@ export const ProgressBar: FC<Partial<StepWizardChildProps>> = ({
         <React.Fragment key={i}>
           <div
             className={`${
-              i <= (currentStep || 1) ? "bg-primaryColor" : "bg-white"
+              i <= (currentStep || 1) ? "bg-primaryColor" : "bg-gray-200"
             } h-4 w-4 rounded-full md:h-6 md:w-6`}
             onClick={() => ((currentStep || 1) >= i ? goToStep?.(i) : null)}
           ></div>
-          <div className="h-0.5 flex-1 bg-white">
+          <div className="h-0.5 flex-1 bg-gray-200">
             <div
               className={`${
                 i < (currentStep || 1)
                   ? "w-full bg-primaryColor"
-                  : "w-0 bg-white"
+                  : "w-0 bg-gray-200"
               } h-full transition-all`}
             ></div>
           </div>

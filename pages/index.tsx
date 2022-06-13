@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { motion } from "framer-motion";
 const Home: NextPage = () => {
   return (
     <>
@@ -15,11 +16,11 @@ Join thousands of people to decentralized social
 media influencing."
         ></meta>
         <meta name="theme-color" content="#0a0701" />
-        <link rel="shortcut icon" href="./wield.svg" type="image/x-icon" />
+        <link rel="shortcut icon" href="https://wield-frontend.vercel.app/wield.svg" type="image/x-icon" />
         <meta property="og:url" content="https://wield-frontend.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Wield Landing page" />
-        <meta property="og:image" content="./logo.png" />
+        <meta property="og:image" content="https://wield-frontend.vercel.app/wield.svg" />
         <meta property="og:image:alt" content="Wield banner image" />
         <meta
           property="og:description"
@@ -62,7 +63,12 @@ media influencing.e"
           </div>
         </header>
         <div className=" relative flex h-full flex-1 flex-col items-center justify-between px-6 pt-8">
-          <div className="flex flex-col gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: "-40%" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-4"
+          >
             <h1 className="w-full max-w-[830px] text-center  text-4xl font-semibold  text-white md:text-5xl xl:text-[70px] xl:leading-[85.33px]">
               Connecting People brand and influencing
             </h1>
@@ -71,15 +77,22 @@ media influencing.e"
               people to decentralized social media influencing.
             </p>
             <div className="mb-8 flex items-center justify-center">
-              <a
-                href="#"
-                className="text-md mr-4 origin-center rounded-full border-2 border-transparent bg-primaryColor py-2 px-4 uppercase text-white hover:bg-primaryLightColor  active:scale-95"
-              >
-                Get started
-              </a>
+              <Link href="/login" passHref className="">
+                <a
+                  href="#"
+                  className="text-md mr-4 origin-center rounded-full border-2 border-transparent bg-primaryColor py-2 px-4 uppercase text-white hover:bg-primaryLightColor  active:scale-95"
+                >
+                  Get started
+                </a>
+              </Link>
             </div>
-          </div>
-          <div className="glow mt-6   flex w-[85vw] max-w-[1015px] items-end justify-center md:mt-0 xl:max-w-[1140px]">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: "40%" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            className="glow mt-6   flex w-[85vw] max-w-[1015px] items-end justify-center md:mt-0 xl:max-w-[1140px]"
+          >
             <div className="relative mid:hidden">
               <Image
                 src="/img/product_preview(mobile).png"
@@ -88,6 +101,7 @@ media influencing.e"
                 height={2913}
                 width={4096}
                 quality={60}
+                priority
               />
             </div>
             <div className="relative hidden mid:block">
@@ -98,9 +112,10 @@ media influencing.e"
                 height={2124}
                 width={4556}
                 quality={60}
+                priority
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
     </>

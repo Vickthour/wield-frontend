@@ -8,6 +8,7 @@ import {
 } from "react";
 import { Step1, Step2, Step3, Step4 } from "../carousel";
 import Navbar from "../inc/Navbar";
+import {motion,AnimatePresence} from 'framer-motion'
 interface AuthForm {
   children: ReactNode;
 }
@@ -24,19 +25,23 @@ const AuthFormLayout: FC<AuthForm> = ({ children }) => {
         }
         return index + 1;
       });
-    }, 20000);
+    }, 5000);
     return () => {
       clearInterval(interval);
     };
   }, [activeIndex]);
   return (
-    <main className="overflow-hidden bg-background">
+    <main className="overflow-hidden bg-white">
       <div className="container mx-auto flex min-h-screen flex-col px-4">
         <Navbar />
         <div className="grid w-full flex-1 grid-cols-1 items-center gap-x-10 md:grid-cols-2 xl:grid-cols-5">
           <div className="order-2 hidden md:order-1 md:flex md:h-full md:flex-col xl:col-span-3">
-            <div className="flex items-center justify-center md:flex-[4] md:items-end">
-              <CurrentImage />
+            <div className="flex items-center justify-center md:flex-[4] md:items-end overflow-hidden">
+              <AnimatePresence exitBeforeEnter>
+                <motion.div key={activeIndex} initial={{opacity:0,x:'50%'}} animate={{opacity:1,x:0}} exit={{opacity:0,x:'-50%'}} >
+                  <CurrentImage  />
+                </motion.div>
+              </AnimatePresence>
             </div>
             <div className="md:flex-[2] ">
               <div className="flex  w-full items-center justify-center gap-4">
