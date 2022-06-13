@@ -8,9 +8,9 @@ const Navbar = () => {
       <div className="relative ">
         <Link href="/">
           <Image
-            src="/img/logo.png"
-            width={152}
-            height={57}
+            src="/img/Wield.png"
+            width={142}
+            height={40}
             alt="Weild Logo"
           />
         </Link>
