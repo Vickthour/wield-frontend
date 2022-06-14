@@ -39,10 +39,10 @@ export default function ListBox({
     >
       <Listbox.Button
         type="button"
-        className={`relative flex w-full items-center justify-between rounded-full md:rounded-lg  bg-gray-200  px-4 py-5  text-gray-700 hover:bg-opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75   `}
+        className={`relative flex w-full items-center justify-between rounded-full md:rounded-lg  border-2   px-4 py-5  text-gray-700 focus:outline-none  focus:border-orange-500   `}
       >
         {value ? (
-          <h3 className="absolute top-1 left-5 md:left-4 text-xs md:text-sm text-gray-700">{label}</h3>
+          <h3 className="absolute top-1 left-5 md:left-4 text-xs md:text-sm  text-orange-500">{label}</h3>
         ) : (
           ""
         )}
