@@ -26,9 +26,9 @@ const Login = () => {
   const onSubmit: SubmitHandler<loginInputs> = (data) => console.log(data);
   return (
     <AuthFormLayout>
-      <div className="my-auto flex h-full  flex-col justify-center pt-8  md:pt-0 ">
+      <div className="my-auto flex h-full  flex-col md:justify-center pt-8  md:pt-0 ">
         <h1 className="font-montserrat text-center text-3xl  font-normal md:text-left md:text-4xl lg:text-[40px]">
-          Welcome back
+          Welcome
         </h1>
         <p className="font-montserrat text-center text-base md:text-left ">
           To keep connected with us, please login with your personal details
@@ -45,7 +45,7 @@ const Login = () => {
               register={register("email/username")}
             />
           </div>
-          <div className="mb-12 flex flex-col pt-4">
+          <div className="mb-8 flex flex-col pt-4">
             <Input.Password
               id="password"
               label="Password"
@@ -53,7 +53,7 @@ const Login = () => {
               register={register("password")}
               showIcon
             />
-            <div className="flex justify-between">
+            <div className="flex justify-between mt-2">
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"
@@ -89,7 +89,7 @@ const Login = () => {
         </form>
 
         <div>
-          <div className="font-montserrat mt-8 lg:mt-10">
+          <div className="font-montserrat mt-4 lg:mt-8">
             <p className="text-center md:text-left">OR you can join with</p>
             <div className="mt-2 flex justify-center gap-4 md:justify-start">
               <IconButton icon={<FacebookIcon />} className="bg-[#345FCB1A]" />

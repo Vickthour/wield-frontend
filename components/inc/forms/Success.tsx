@@ -24,7 +24,7 @@ const Success: FC = () => {
         <p className="mt-4">Sign up completed</p>
       </div>
       <div className="space-y-2 text-center">
-        <p>A confirmation link has been sent to your email</p>
+        <p>Just one more thing, confirm your mail</p>
         <h3 className="text-xl font-semibold">{formHandler?.data?.email}</h3>
       </div>
     </div>

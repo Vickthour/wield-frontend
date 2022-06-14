@@ -16,20 +16,20 @@ const Password = ({ id, label, register, showIcon }: PasswordProps) => {
   const [showPass, setShowPass] = useState(false);
   if (showIcon) {
     return (
-      <div className="font-roboto relative flex items-center rounded-full md:rounded-lg overflow-hidden bg-gray-200 py-2 px-1 focus-within:bg-gray-300 md:py-4 md:px-2">
+      <div className="font-roboto relative flex items-center overflow-hidden rounded-full border-2  py-2 px-1 focus-within:border-orange-500 md:rounded-lg md:py-4 md:px-2">
         <label className="flex items-center pl-1" htmlFor="email">
           <PasswordIcon />
         </label>
         <input
           id={id}
-          className="peer h-10 w-full  bg-gray-200 pl-4 text-gray-900 placeholder-transparent focus:bg-gray-300  focus:outline-none"
+          className="peer h-10 w-full pl-4 text-gray-900 placeholder-transparent  focus:outline-none"
           {...register}
           type={showPass ? "text" : "password"}
           placeholder={label}
         />
         <label
           htmlFor={id}
-          className="absolute left-10 top-0 text-xs md:text-sm text-blue-400 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:md:text-sm peer-focus:text-blue-400"
+          className="absolute left-10 top-0 text-xs text-orange-500 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-orange-500 md:text-sm peer-focus:md:text-sm"
         >
           {label}
         </label>
@@ -78,17 +78,17 @@ const Password = ({ id, label, register, showIcon }: PasswordProps) => {
     );
   }
   return (
-    <div className="relative flex items-center rounded-full md:rounded-lg overflow-hidden bg-gray-200 py-2 px-1 focus-within:bg-gray-300 md:py-4 md:px-2">
+    <div className="relative flex items-center overflow-hidden rounded-full  py-2 px-1 focus-within:border-orange-500 border-2 md:rounded-lg md:py-4 md:px-2">
       <input
         id={id}
-        className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent focus:bg-gray-300 bg-gray-200  focus:outline-none"
+        className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent focus:outline-none"
         {...register}
         type={showPass ? "text" : "password"}
         placeholder={label}
       />
       <label
         htmlFor={id}
-        className="absolute left-5 top-0 text-xs md:text-sm text-blue-400 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:md:text-sm peer-focus:text-blue-400"
+        className="absolute left-5 top-0 text-xs text-orange-500 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-orange-500 md:text-sm peer-focus:md:text-sm"
       >
         {label}
       </label>
@@ -142,20 +142,20 @@ interface IconProps extends InputProps {
 }
 const Icon = ({ id, label, type, icon, register }: IconProps) => {
   return (
-    <div className="font-roboto relative flex items-center overflow-hidden rounded-full md:rounded-lg bg-gray-200 py-2 px-1 focus-within:bg-gray-300 md:py-4 md:px-2">
+    <div className="font-roboto relative flex items-center overflow-hidden rounded-full border-2  py-2 px-1 focus-within:border-orange-500 md:rounded-lg md:px-2 md:pt-5 md:pb-4">
       <label className="flex items-center pl-1" htmlFor="email">
         {icon}
       </label>
       <input
         id={id}
         type={type}
-        className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent focus:bg-gray-300 bg-gray-200  focus:outline-none"
+        className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent  focus:outline-none"
         {...register}
         placeholder={label}
       />
       <label
         htmlFor={id}
-        className="absolute left-10 top-0 text-xs md:text-sm text-blue-400 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:md:text-sm peer-focus:text-blue-400"
+        className="absolute left-10 top-0 text-xs text-orange-500 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-orange-500 md:text-sm peer-focus:md:text-sm"
       >
         {label}
       </label>
@@ -164,17 +164,17 @@ const Icon = ({ id, label, type, icon, register }: IconProps) => {
 };
 const TextField = ({ id, label, register }: InputProps) => {
   return (
-    <div className="font-roboto overflow-hidden relative flex items-center rounded-lg bg-gray-200 py-2 px-1 focus-within:bg-gray-300 md:py-4 md:px-2">
+    <div className="font-roboto relative flex items-center overflow-hidden rounded-lg py-2 px-1 focus-within:border-orange-500 border-2 md:pt-5 md:pb-4 md:px-2">
       <textarea
         id={id}
         rows={4}
-        className="peer pt-2 h-10 min-h-[90px]  w-full pl-4 text-gray-900 placeholder-transparent  focus:bg-gray-300 bg-gray-200 focus:outline-none"
+        className="peer h-10 min-h-[90px] w-full pt-2 pl-4 text-gray-900  placeholder-transparent focus:outline-none"
         {...register}
         placeholder={label}
       />
       <label
         htmlFor={id}
-        className="absolute left-5 top-0 text-xs md:text-sm text-blue-400 transition-all peer-placeholder-shown:top-[20px] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:md:text-sm peer-focus:text-blue-400 "
+        className="absolute left-5 top-0 text-xs text-orange-500 transition-all peer-placeholder-shown:top-[20px] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-orange-500 md:text-sm peer-focus:md:text-sm "
       >
         {label}
       </label>
@@ -189,17 +189,17 @@ const Input = ({
   register,
 }: InputProps) => {
   return (
-    <div className="font-roboto overflow-hidden relative flex items-center rounded-full bg-gray-200 py-2 px-1  focus-within:bg-gray-300 md:rounded-lg md:py-4 md:px-2">
+    <div className="font-roboto relative flex items-center overflow-hidden rounded-full border-2 py-2  px-1 focus-within:border-orange-500 md:rounded-lg md:px-2 md:pt-5 md:pb-4">
       <input
         id={id}
         type={type}
-        className="peer h-10 w-full  bg-gray-200 pl-4 text-gray-900 placeholder-transparent focus:bg-gray-300  focus:outline-none"
+        className="peer h-10 w-full   pl-4 text-gray-900 placeholder-transparent focus:outline-none"
         {...register}
         placeholder={label}
       />
       <label
         htmlFor={id}
-        className="absolute left-5 top-0 text-xs md:text-sm text-blue-400 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:md:text-sm peer-focus:text-blue-400"
+        className="absolute left-5 top-0 text-xs text-orange-500 transition-all peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 peer-focus:-top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-orange-500 md:text-sm peer-focus:md:text-sm"
       >
         {label}
       </label>

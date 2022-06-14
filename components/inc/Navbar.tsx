@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -7,12 +6,7 @@ const Navbar = () => {
     <div className="flex justify-center py-2 md:justify-start lg:pt-12  ">
       <div className="relative ">
         <Link href="/">
-          <Image
-            src="/img/Wield.png"
-            width={142}
-            height={40}
-            alt="Weild Logo"
-          />
+          <h1 className="text-4xl font-bold text-primaryColor">Logo</h1>
         </Link>
       </div>
     </div>
