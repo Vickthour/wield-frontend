@@ -6,11 +6,11 @@ import SideNav from "./SideNav";
 
 const AppBody = () => {
   return (
-    <main className="mt-20 pt-5 min-h-[calc(100vh_-_80px)] bg-background">
-      <div className="container px-4 mx-auto grid grid-cols-1 sm:grid-cols-9 mid:grid-cols-12 gap-4">
-        <LeftPane/>
-        <MainPane/>
-        <RightPane/>
+    <main className="mt-20 min-h-[calc(100vh_-_80px)] bg-background md:pt-5 mb-16 mid:mb-0 ">
+      <div className=" mx-auto grid grid-cols-1 gap-3 sm:px-1 md:grid-cols-9 lg:grid-cols-12 xl:max-w-[1536px]">
+        <LeftPane />
+        <MainPane />
+        <RightPane />
       </div>
     </main>
   );
