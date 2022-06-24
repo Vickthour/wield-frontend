@@ -16,7 +16,7 @@ const AvatarBaseClasses = variantProps({
       lg: tw`h-16 w-16`,
     },
     border: {
-      primary: tw`border-2 bg-primaryColor border-primaryColor`,
+      primary: tw`border-2 bg-[#FF685B] border-[#FF685B]`,
       white: "border-2 border-white",
       none: tw`border-none`,
     },
