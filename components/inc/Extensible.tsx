@@ -24,12 +24,13 @@ const Extensible: FC<ExtensibleProps> = ({
     return (
       <>
         <IconButton
-          icon={<ChevronLeft size="sm" />}
+          icon={<ChevronLeft size={"xs"} />}
           shadow
           color="white"
+          size={"sm"}
           className={`${
             isOverflowing ? "absolute" : "hidden"
-          } right-0 top-[50%] z-10 z-20 translate-y-[-50%] translate-x-[25%]`}
+          } right-0 top-[50%] z-10 translate-y-[-50%] translate-x-[25%]`}
         />
         {React.Children.map<ReactNode, ReactNode>(children, (child, i) => {
           if (React.isValidElement(child)) {
@@ -45,9 +46,10 @@ const Extensible: FC<ExtensibleProps> = ({
   return (
     <div {...otherProps} ref={itemRef}>
       <IconButton
-        icon={<ChevronLeft size="sm" />}
+        icon={<ChevronLeft size="xs" />}
         shadow
         color="white"
+        size="sm"
         className={`${
           isOverflowing ? "absolute" : "hidden"
         } right-0 top-[50%] translate-y-[-50%] translate-x-[25%] z-20`}
