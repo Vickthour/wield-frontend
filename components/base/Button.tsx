@@ -11,6 +11,7 @@ const buttonClasses = variantProps({
   base: tw`inline-flex items-center gap-1 focus:outline-none transition ease-in-out duration-300 active:scale-95 `,
   variants: {
     size: {
+      xs: tw`px-1 py-0.5 text-xs`,
       sm: tw`px-2 py-1 text-sm`,
       md: "px-4 py-2",
       lg: "px-8 py-3 text-lg",
@@ -52,6 +53,11 @@ const buttonClasses = variantProps({
       },
       className: tw`border-gray-700 bg-[transparent] text-gray-700 hover:bg-gray-700 hover:text-white`,
     },
+    {
+     variants:{  shape:'rounded',
+      size:'xs',},
+      className: tw`rounded-[5px]`,
+    }
   ],
 
   defaultVariants: {
