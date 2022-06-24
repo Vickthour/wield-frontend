@@ -11,24 +11,28 @@ import {
 } from "../icons";
 import Image from "next/image";
 import Button from "../base/Button";
+import { useMid } from "../hooks/useMediaQuery";
 
 const Post = () => {
   const [liked, setLiked] = React.useState(false);
+  const mid=useMid()
   return (
     <div className="font-montserrat w-full rounded-lg bg-white">
-      <header className="flex items-center gap-4 px-4 py-3">
+      <header className="flex items-center gap-1.5 p-2 md:gap-4  md:px-4 md:py-3">
         <Avatar.Story
           src="/img/avatar.png"
           state="notviewed"
-          size="md"
+          size="sm"
           alt="avatar"
         />
         <div className="flex flex-1 flex-col">
-          <h1 className="text-2xl font-medium">Ella Ray</h1>
-          <h3 className="text-gray-400">Lagos,Nigeria</h3>
-          <p className="text-xs text-gray-400">28 March, 2022.</p>
+          <h1 className="text-lg font-medium md:text-xl">Ella Ray</h1>
+          <h3 className="text-xs text-gray-400 md:text-base">Lagos,Nigeria</h3>
+          <p className="hidden text-gray-400 md:block md:text-xs">
+            28 March, 2022.
+          </p>
         </div>
-        <IconButton icon={<Meatball />} />
+        <IconButton icon={<Meatball />} color="white" />
       </header>
       <main>
         <div className="relative aspect-video w-full">
@@ -42,28 +46,44 @@ const Post = () => {
             objectPosition={"center"}
           />
         </div>
-        <div className="relative z-10 flex bg-gray-300 px-4 py-2.5">
+        <div className="relative  z-10 flex bg-gray-300 px-2 py-1.5 md:px-4">
           <div className="flex-1">
-            <h3 className="font-light">WWW.Nairaland.com</h3>
-            <h1 className="flex-1 font-semibold">
+            <h3 className="text-[8px] font-light mid:text-base uppercase">
+              WWW.Nairaland.com
+            </h3>
+            <h1 className="flex-1 text-[10px] mid:text-base font-semibold">
               Best Way to Sell Your Product to Many Clients
             </h1>
           </div>
-          <Button color="gray" size="md" shape="rounded">
+          <Button color="gray" size="xs" shape="rounded">
             Learn More
           </Button>
         </div>
-        <footer className="p-4">
+        <footer className="p-2 md:p-4">
           <div className="flex">
             <div className="flex flex-1">
               <IconButton
-                icon={liked ? <HeartFilled size="lg" /> : <Heart size="lg" />}
+                icon={liked ? <HeartFilled size={mid ? "lg" : "md"} /> : <Heart size={mid ? "lg" : "md"} />}
                 onClick={() => setLiked(!liked)}
-              />
-              <IconButton icon={<Download size="lg" />} />
-              <IconButton icon={<Share size="md" />} />
+                color="white"
+                size={mid ? "md" : "sm"}
+                />
+              <IconButton
+                icon={<Download size={mid ? "lg" : "md"} />}
+                color="white"
+                size={mid ? "md" : "sm"}
+                />
+              <IconButton icon={<Share size={mid ? "md" : "sm"} />} 
+                color="white"
+                size={mid ? "md" : "sm"}
+                
+                />
             </div>
-            <IconButton icon={<Bookmark size="md" />} />
+            <IconButton
+                color="white"
+              icon={<Bookmark size={"sm"} />}
+              size={mid ? "md" : "sm"}
+            />
           </div>
           <div>
             <div className="flex items-center gap-2">
@@ -73,17 +93,16 @@ const Post = () => {
                   { src: "/img/avatar.png", alt: "emmanuel-9040" },
                   { src: "/img/avatar.png", alt: "emmanuel-9040" },
                 ]}
-                size="md"
-                space="lg"
+                size={mid ? "md" : "sm"}
+                space={mid ? "lg" : "md"}
                 border="white"
-                
               />
-              <p>
+              <p className="text-xs md:text-base">
                 Liked by <span className="font-semibold">Kemi Smallz</span> and{" "}
                 <span className="font-semibold">1,002 others</span>
               </p>
             </div>
-            <div>
+            <div className="text-sm md:text-base">
               <span className="font-semibold">EllaRay</span> Those who will
               continue to make money are the ones that refused to consume all
               they earned but invested for their tomorrow.
