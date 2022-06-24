@@ -6,9 +6,9 @@ import Extensible from "./Extensible";
 const StoryPane = () => {
  
   return (
-    <Card py="sm" className="relative">
+    <Card py="sm"  className="relative pr-0" px="sm">
       <Extensible Fragment>
-        <div className="w-full overflow-hidden  rounded-lg bg-white px-5 py-3 pr-0">
+        <div className="w-full overflow-hidden  rounded-lg bg-white ">
           <div className="flex w-full gap-2">
             <div className="flex flex-col items-center ">
               <div className="relative">
@@ -19,14 +19,14 @@ const StoryPane = () => {
                   alt="avatar"
                 />
                 <IconButton
-                  icon={<Plus size="sm" />}
+                  icon={<Plus size="xs" />}
                   className="absolute bottom-0 right-0 "
-                  size="sm"
+                  size="xs"
                   color="primary"
                   shadow
                 />
               </div>
-              <h2>Your Story</h2>
+              <h2 className="text-sm md:text-base text-center">Your Story</h2>
             </div>
             {Array.from({ length: 10 }).map((_, i) => {
               return (
@@ -37,7 +37,7 @@ const StoryPane = () => {
                     size="md"
                     alt="avatar"
                   />
-                  <h2 className="text-center">Victor</h2>
+                  <h2 className="text-center text-sm md:text-base mt-[3px]">Victor</h2>
                 </div>
               );
             })}
