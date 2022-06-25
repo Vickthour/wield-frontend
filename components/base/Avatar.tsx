@@ -130,7 +130,7 @@ const Group = ({ images, size, border, ...props }: GroupExtProps) => {
           alt={image.alt}
           border={border}
           size={size}
-          className="duration-500 ease-in-out"
+          className="transition-[margin] duration-500 ease-in-out"
         />
       ))}
     </div>
