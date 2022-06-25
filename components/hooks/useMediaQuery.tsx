@@ -44,5 +44,14 @@ function useMediaQuery(query: string): boolean {
 export default useMediaQuery;
 
 export const useMd=()=>useMediaQuery("(min-width: 768px)");
-export const useMid=()=>useMediaQuery("(min-width: 960px)");
+export const useMid=()=>{
+  const [mid, setMid] = useState(false);
+  const midQuery = useMediaQuery("(min-width: 960px)");
+  useEffect(() => {
+    if (mid !== midQuery) {
+      setMid(midQuery);
+    }
+  }, [midQuery, mid, setMid]);
+  return mid
+};
 export const useLg=()=>useMediaQuery("(min-width: 1024px)");
