@@ -17,6 +17,7 @@ function MyApp({Component, pageProps}: AppProps) {
             <GuestLayout>
                 <Component {...pageProps} />
             </GuestLayout>
+
             <Script src="preline/dist/hs-ui.bundle.js"></Script>
         </>
     );

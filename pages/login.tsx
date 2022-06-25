@@ -41,7 +41,7 @@ const Login = () => {
             <Input.Icon
               id="email"
               label="Email Address/Username"
-              icon={<EmailIcon />}
+              icon={<EmailIcon/>}
               register={register("email/username")}
             />
           </div>
@@ -92,7 +92,7 @@ const Login = () => {
           <div className="font-montserrat mt-4 lg:mt-8">
             <p className="text-center md:text-left">OR you can join with</p>
             <div className="mt-2 flex justify-center gap-4 md:justify-start">
-              <IconButton icon={<FacebookIcon />} className="bg-[#345FCB1A]" />
+              <IconButton icon={<FacebookIcon/>} className="bg-[#345FCB1A]" />
               <IconButton icon={<GoogleIcon />} className="bg-[#FF685B0F]" />
               <IconButton icon={<LinkedInIcon />} className="bg-[#1976D21A]" />
             </div>

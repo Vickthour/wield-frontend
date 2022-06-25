@@ -2,10 +2,14 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { useMid } from "../components/hooks/useMediaQuery";
+import mobilePreview from "../public/img/product_preview(mobile).png";
+import desktopPreview from "../public/img/product_preview.png";
+
 const Home: NextPage = () => {
+  const isMid = useMid();
   return (
     <>
-      {/* TODO: Added head and meta tags */}
       <Head>
         <title>Wield | connecting people brand and influencers</title>
         <meta
@@ -36,7 +40,6 @@ media influencing.e"
           src="/img/bg.png"
           alt="gradient background"
           layout="fill"
-          quality={90}
           objectFit="cover"
           objectPosition={"center"}
           priority
@@ -49,13 +52,11 @@ media influencing.e"
                 alt="wield white Logo"
                 width={152}
                 height={57}
+                priority
               />
             </div>
             <Link href="/login" passHref className="">
-              <a
-                href="#"
-                className="hover:bg-primaryLighterColor mr-4 hidden origin-center rounded-full border-2 border-white bg-transparent py-1.5 px-2 text-sm uppercase text-white transition-all hover:bg-white hover:font-semibold hover:text-black active:scale-95 md:inline md:py-2 md:px-4 md:text-base"
-              >
+              <a className="hover:bg-primaryLighterColor mr-4 hidden origin-center rounded-full border-2 border-white bg-transparent py-1.5 px-2 text-sm uppercase text-white transition-all hover:bg-white hover:font-semibold hover:text-black active:scale-95 md:inline md:py-2 md:px-4 md:text-base">
                 Get started
               </a>
             </Link>
@@ -71,33 +72,37 @@ media influencing.e"
               people to decentralized social media influencing.
             </p>
             <div className="mb-8 flex items-center justify-center">
-              <a
-                href="#"
-                className="text-md mr-4 origin-center rounded-full border-2 border-transparent bg-primaryColor py-2 px-4 uppercase text-white hover:bg-primaryLightColor  active:scale-95"
-              >
-                Get started
-              </a>
+              <Link href="/login" passHref className="">
+                <a
+                  href="#"
+                  className="text-md mr-4 origin-center rounded-full border-2 border-transparent bg-primaryColor py-2 px-4 uppercase text-white hover:bg-primaryLightColor  active:scale-95"
+                >
+                  Get started
+                </a>
+              </Link>
             </div>
           </div>
           <div className="glow mt-6   flex w-[85vw] max-w-[1015px] items-end justify-center md:mt-0 xl:max-w-[1140px]">
-            <div className="relative mid:hidden">
+            <div className="relative overflow-hidden rounded-t-lg mid:hidden">
               <Image
-                src="/img/product_preview(mobile).png"
-                className="mx-auto w-[90vw] max-w-6xl "
+                src={mobilePreview}
+                className="mx-auto w-[90vw] max-w-6xl rounded-md"
                 alt="product preview"
                 height={2913}
                 width={4096}
                 quality={60}
+                placeholder={"blur"}
               />
             </div>
-            <div className="relative hidden mid:block">
+            <div className="relative hidden overflow-hidden rounded-t-2xl mid:block">
               <Image
-                src="/img/product_preview.png"
+                src={desktopPreview}
                 className=" mx-auto "
                 alt="product preview"
                 height={2124}
                 width={4556}
                 quality={60}
+                placeholder={"blur"}
               />
             </div>
           </div>
