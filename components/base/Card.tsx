@@ -11,12 +11,14 @@ const CardClassNames=variantProps({
         px:{
             sm:tw`px-3`,
             md:tw`px-5`,
-            lg:tw`px-6`
+            lg:tw`px-6`,
+            xl:tw`px-10`
         },
         py:{
             sm:tw`py-2`,
             md:tw`py-3`,
-            lg:tw`py-5`
+            lg:tw`py-5`,
+            xl:tw`py-10`,
         },
     },
     defaultVariants:{

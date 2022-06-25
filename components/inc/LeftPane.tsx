@@ -16,15 +16,21 @@ const LeftPane = () => {
             <p>see more </p>
           </div>
           <div className="relative">
-            <Extensible className=" flex gap-2 overflow-hidden ">
-              <Button>product</Button>
-              <Button>product</Button>
-              <Button>product</Button>
-              <Button>product</Button>
+            <Extensible className=" flex gap-2 overflow-hidden  pb-2">
+              <Button fontWeight="medium">product</Button>
+              <Button color="lightgray" fontWeight="medium" shadow>
+                Entertainment
+              </Button>
+              <Button color="lightgray" fontWeight="medium" shadow>
+                Sports
+              </Button>
+              <Button color="lightgray" fontWeight="medium" shadow>
+                Finance
+              </Button>
+            
             </Extensible>
           </div>
           <div className="mt-4 space-y-2 pr-2">
-            
             <div className="grid grid-cols-2 grid-rows-[150px_150px] gap-2">
               <div className="relative w-full">
                 <Image

@@ -21,6 +21,7 @@ const buttonClasses = variantProps({
       primary: "bg-primaryColor text-white",
       pink: "bg-[#FF685B0F] text-black",
       gray: tw`bg-gray-200 text-gray-700`,
+      lightgray: tw`bg-[#F8F8F8] text-black`,
     },
     disabled: {
       true: "opacity-50 cursor-not-allowed",
@@ -36,6 +37,12 @@ const buttonClasses = variantProps({
     shadow: {
       true: tw`shadow-md`,
     },
+    fontWeight:{
+      normal:tw`font-normal`,
+      medium: tw`font-medium`,
+      semibold: tw`font-semibold`,
+      bold: tw`font-bold`
+    }
   },
   compoundVariants: [
     {
@@ -65,6 +72,7 @@ const buttonClasses = variantProps({
     color: "primary",
     shape: "pill",
     shadow: false,
+    fontWeight:'normal'
   },
 });
 type ButtonProps = JSX.IntrinsicElements["button"] &

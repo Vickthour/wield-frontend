@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IconButton } from "../base";
 import Avatar from "../base/Avatar";
 import Button from "../base/Button";
@@ -8,19 +8,22 @@ import { useMid } from "../hooks/useMediaQuery";
 import { Coin, NotificationP, Wallet } from "../icons";
 
 const AppNav = () => {
-  const mid=useMid()
+     const mid = useMid();
+
   return (
     <nav className="fixed bg-white top-0 left-0 w-full z-20">
       <div className="container mx-auto flex h-20 items-center justify-between px-2">
         <div className="relative h-12 w-24 mid:h-20 mid:w-48">
-          <Link href={"/app"}>
-            <Image
-              src={"/img/logo.svg"}
-              quality="100"
-              alt="logo"
-              layout="fill"
-              className="w-[20px!important]"
-            />
+          <Link href={"/app"} passHref>
+            <a href="#">
+              <Image
+                src={"/img/logo.svg"}
+                quality="100"
+                alt="logo"
+                layout="fill"
+                className="w-[20px!important]"
+              />
+            </a>
           </Link>
         </div>
        
