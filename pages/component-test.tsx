@@ -56,7 +56,7 @@ const ComponentTest = () => {
                     color="white"
                 />
             </div>
-            <BaseModal modalBody="Test Body" modalTitle="test"/>
+            <BaseModal modalBody="Test Body" modalTitle="test 001 002"/>
 
         </main>
 
