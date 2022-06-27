@@ -1,11 +1,11 @@
-import { FC, ReactNode } from "react";
+import {FC, ReactNode} from "react";
 
 interface LayoutProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
-const GuestLayout: FC<LayoutProps> = ({ children }) => {
-  return <>{children}</>;
+const GuestLayout: FC<LayoutProps> = ({children}) => {
+    return <>{children}</>;
 };
 
 export default GuestLayout;
