@@ -1,8 +1,6 @@
 import React from "react";
-import { Card } from "../base";
-import Button from "../base/Button";
-import Extensible from "./Extensible";
-import SideNav from "./SideNav";
+import { Card,Button } from "../base";
+import {Extensible,SideNav} from "./";
 import Image from "next/image";
 
 const LeftPane = () => {
