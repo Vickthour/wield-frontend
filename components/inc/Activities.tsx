@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Card, IconButton } from "../base";
 import Avatar from "../base/Avatar";
-import { useMid } from "../hooks/useMediaQuery";
+import { useMid } from "../utils/hooks/useMediaQuery";
 import { AddedPerson, AddPerson } from "../icons";
 
 const Activities = ({ main = false }: { main?: boolean }) => {
