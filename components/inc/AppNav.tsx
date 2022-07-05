@@ -57,13 +57,15 @@ const AppNav = () => {
           >
             2000
           </Button>
-          <Link href="/app/account">
-            <Avatar
-              src="/img/avatar.png"
-              border="none"
-              shape="square"
-              className="hidden md:block"
-            />
+          <Link href="/app/account" passHref>
+            <a href="#">
+              <Avatar
+                src="/img/avatar.png"
+                border="none"
+                shape="square"
+                className="hidden md:block"
+              />
+            </a>
           </Link>
         </div>
       </div>

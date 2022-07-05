@@ -27,9 +27,7 @@ export const ResponsiveVariant =<T> (responsive: ResponsiveVariantProps<T>) => {
       "@lg": lg,
       "@xl": xl,
     };
-    console.log(reshooks,'keys');
-    const keys = <keyTypes[]>Object.keys(reshooks);
-    console.log(keys[1])
+
   
     if (reshooks['@xl']&&responsive['@xl']) {
       

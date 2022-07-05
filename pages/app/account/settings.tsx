@@ -22,7 +22,6 @@ const Settings = () => {
     id: "tab",
     query: "Account",
   });
-  console.log(activeTab, "activeTab");
   return (
     <Card
       py="none"
