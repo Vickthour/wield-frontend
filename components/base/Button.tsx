@@ -1,14 +1,17 @@
 import { variantProps, VariantPropsOf } from "classname-variants/react";
-import React, { FC } from "react";
+import React, { FC, ComponentPropsWithoutRef, ElementType } from "react";
 
+type ButtonPoly<T extends ElementType> = {
+  as?: T;
+};
 interface iconProps {
   icon?: React.ReactNode;
-  iconPosition?:"left" | "right";
+  iconPosition?: "left" | "right";
 }
 
-const tw =String.raw
+const tw = String.raw;
 const buttonClasses = variantProps({
-  base: tw`inline-flex items-center gap-1 focus:outline-none transition ease-in-out duration-300 active:scale-95 `,
+  base: tw`inline-flex items-center  focus:outline-none transition ease-in-out duration-300 active:scale-95 `,
   variants: {
     size: {
       xs: tw`px-1 py-0.5 text-xs`,
@@ -37,12 +40,18 @@ const buttonClasses = variantProps({
     shadow: {
       true: tw`shadow-md`,
     },
-    fontWeight:{
-      normal:tw`font-normal`,
+    fontWeight: {
+      normal: tw`font-normal`,
       medium: tw`font-medium`,
       semibold: tw`font-semibold`,
-      bold: tw`font-bold`
-    }
+      bold: tw`font-bold`,
+    },
+    gap: {
+      sm: "gap-1",
+      md: "gap-2",
+      lg: "gap-3",
+      xl: "gap-4",
+    },
   },
   compoundVariants: [
     {
@@ -61,10 +70,9 @@ const buttonClasses = variantProps({
       className: tw`border-gray-700 bg-[transparent] text-gray-700 hover:bg-gray-700 hover:text-white`,
     },
     {
-     variants:{  shape:'rounded',
-      size:'xs',},
+      variants: { shape: "rounded", size: "xs" },
       className: tw`rounded-[5px]`,
-    }
+    },
   ],
 
   defaultVariants: {
@@ -72,17 +80,35 @@ const buttonClasses = variantProps({
     color: "primary",
     shape: "pill",
     shadow: false,
-    fontWeight:'normal'
+    fontWeight: "normal",
+    gap: "sm",
   },
 });
-type ButtonProps = JSX.IntrinsicElements["button"] &
-  VariantPropsOf<typeof buttonClasses> & iconProps;
-const Button: FC<ButtonProps> = ({children,icon,iconPosition,...props}) => {
-  return <button {...buttonClasses(props)}>
-    {iconPosition==="left"?icon:null}
-    {children}
-    {iconPosition==="right"?icon:null}
-  </button>;
+type ButtonBaseProps = VariantPropsOf<typeof buttonClasses> & iconProps;
+
+interface ButtonExtProps<C extends React.ElementType> extends ButtonBaseProps {
+  as?: C;
+  children?: React.ReactNode;
+}
+
+type ButtonProps<C extends React.ElementType> = ButtonExtProps<C> &
+  Omit<React.ComponentPropsWithoutRef<C>, keyof ButtonExtProps<C>>;
+
+const Button = <C extends React.ElementType = "button">({
+  children,
+  as,
+  icon,
+  iconPosition,
+  ...props
+}: ButtonProps<C>) => {
+  const Component = as || "button";
+  return (
+    <Component {...buttonClasses(props)}>
+      {iconPosition === "left" ? icon : null}
+      {children}
+      {iconPosition === "right" ? icon : null}
+    </Component>
+  );
 };
 
-export default Button
+export default Button;
