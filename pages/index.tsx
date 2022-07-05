@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import { useMid } from "../components/hooks/useMediaQuery";
+import { useMid } from "../components/utils/hooks/useMediaQuery";
 import mobilePreview from "../public/img/product_preview(mobile).png";
 import desktopPreview from "../public/img/product_preview.png";
 
