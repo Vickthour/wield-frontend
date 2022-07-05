@@ -1,9 +1,47 @@
 import React from "react";
-import { Card } from "../base";
-import Avatar from "../base/Avatar";
-import Button from "../base/Button";
-import { Connections, Groups, Level, Messages } from "../icons";
+import { Card, Avatar, Button } from "../base";
+import {
+  Bookmark,
+  Calendar,
+  ConnectionIcon,
+  Groups,
+  Level,
+  MarketStall,
+  Messages,
+  Refer,
+} from "../icons";
+import { InfoCard } from "./InfoCard";
 
+const SideNavItems = [
+  {
+    name: "Connections",
+    icon: <ConnectionIcon />,
+  },
+  {
+    name: "Groups",
+    icon: <Groups />,
+  },
+  {
+    name: "Messages",
+    icon: <Messages />,
+  },
+  {
+    name: "MarketPlace",
+    icon: <MarketStall />,
+  },
+  {
+    name: "Saved",
+    icon: <Bookmark className="[&>path]:fill-[#FC3E03!important]" />,
+  },
+  {
+    name: "Events & Challenges",
+    icon: <Calendar />,
+  },
+  {
+    name: "Referral",
+    icon: <Refer />,
+  },
+];
 const SideNav = () => {
   return (
     <Card className="">
@@ -17,30 +55,9 @@ const SideNav = () => {
         </Button>
       </div>
       <div>
-        <div className="flex gap-2 rounded-lg py-3 px-1 hover:bg-[#FF685B0F]">
-          <Connections />
-          <h1 className="font-medium">Connections</h1>
-        </div>
-        <div className="flex gap-2 rounded-lg py-3 px-1 hover:bg-[#FF685B0F]">
-          <Groups />
-          <h1 className="font-medium">Groups</h1>
-        </div>
-        <div className="flex gap-2 rounded-lg py-3 px-1 hover:bg-[#FF685B0F]">
-          <Messages />
-          <h1 className="font-medium">Groups</h1>
-        </div>
-        <div className="flex gap-2 rounded-lg py-3 px-1 hover:bg-[#FF685B0F]">
-          <Connections />
-          <h1 className="font-medium">Connections</h1>
-        </div>
-        <div className="flex gap-2 rounded-lg py-3 px-1 hover:bg-[#FF685B0F]">
-          <Groups />
-          <h1 className="font-medium">Groups</h1>
-        </div>
-        <div className="flex gap-2 rounded-lg py-3 px-1 hover:bg-[#FF685B0F]">
-          <Messages />
-          <h1 className="font-medium">Groups</h1>
-        </div>
+        {SideNavItems.map((item, index) => (
+          <InfoCard name={item.name} icon={item.icon} key={index} />
+        ))}
       </div>
     </Card>
   );
