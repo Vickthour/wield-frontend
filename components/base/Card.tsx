@@ -9,12 +9,14 @@ const CardClassNames=variantProps({
             true:tw`shadow-md`
         },
         px:{
+            none:'px-0',
             sm:tw`px-3`,
             md:tw`px-5`,
             lg:tw`px-6`,
             xl:tw`px-10`
         },
         py:{
+            none:tw`py-0`,
             sm:tw`py-2`,
             md:tw`py-3`,
             lg:tw`py-5`,

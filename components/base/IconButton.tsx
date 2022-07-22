@@ -43,7 +43,7 @@ const IconClassNames = variantProps({
 type IconButtonExtProps = JSX.IntrinsicElements["button"] &
   VariantPropsOf<typeof IconClassNames> &
   IconButtonProps;
-const IconButton = ({ icon, onClick, ...props }: IconButtonExtProps) => {
+const   IconButton = ({ icon, onClick, ...props }: IconButtonExtProps) => {
   return (
     <button onClick={onClick} type="button" {...IconClassNames(props)}>
       {icon}
@@ -55,37 +55,37 @@ type IcontextProps = JSX.IntrinsicElements["button"] & {
   icon: ReactNode;
   activeIcon?: ReactNode;
 };
+type activeText =
+  | { active?: false; activeClass?: never }
+  | { active: boolean; activeClass: string };
 const IconText = ({
   icon,
   activeIcon,
   text,
-  onClick,
+  active=false,
+  activeClass,
+  
   ...otherProps
-}: IcontextProps) => {
-  const [clicked, setClicked] = useState(false);
+}: IcontextProps & activeText) => {
   if (activeIcon) {
     return (
       <button
         className="flex h-full flex-col items-center justify-between"
-        onClick={() => {
-          setClicked(!clicked);
-          onClick;
-        }}
+        
         {...otherProps}
       >
-        {clicked ? activeIcon : icon}
-        <h1 className="text-sm">{text}</h1>
+        {active ? activeIcon : icon}
+        <h1 className={`${active? activeClass :""} text-sm`}>{text}</h1>
       </button>
     );
   }
   return (
     <button
       className="flex flex-col items-center"
-      onClick={onClick}
       {...otherProps}
-    >
+      >
       {icon}
-      <h1 className="text-sm">{text}</h1>
+      <h1 className={`${active? activeClass :""} text-sm`}>{text}</h1>
     </button>
   );
 };

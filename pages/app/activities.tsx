@@ -11,7 +11,8 @@ const activities = () => {
   return (
     <>
       <AppNav />
-      <AppBody>
+      <AppBody grid>
+
         <LeftPane />
         <MainPane>
             <Activities main/>

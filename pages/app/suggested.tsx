@@ -11,7 +11,7 @@ const suggested = () => {
   return (
     <>
       <AppNav />
-      <AppBody>
+      <AppBody grid>
         <LeftPane />
         <MainPane>
           <Suggestion main />

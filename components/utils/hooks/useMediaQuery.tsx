@@ -9,7 +9,7 @@ function useMediaQuery(query: string): boolean {
     return false;
   };
 
-  const [matches, setMatches] = useState<boolean>(getMatches(query));
+  const [matches, setMatches] = useState<boolean>(false);
 
   function handleChange() {
     setMatches(getMatches(query));
@@ -43,15 +43,8 @@ function useMediaQuery(query: string): boolean {
 
 export default useMediaQuery;
 
-export const useMd=()=>useMediaQuery("(min-width: 768px)");
-export const useMid=()=>{
-  const [mid, setMid] = useState(false);
-  const midQuery = useMediaQuery("(min-width: 960px)");
-  useEffect(() => {
-    if (mid !== midQuery) {
-      setMid(midQuery);
-    }
-  }, [midQuery, mid, setMid]);
-  return mid
-};
-export const useLg=()=>useMediaQuery("(min-width: 1024px)");
+export const useSm = () => useMediaQuery("(min-width: 640px)");
+export const useMd = () => useMediaQuery("(min-width: 768px)");
+export const useMid = () => useMediaQuery("(min-width:960px");
+export const useLg = () => useMediaQuery("(min-width: 1024px)");
+export const useXl = () => useMediaQuery("(min-width: 1280px)");

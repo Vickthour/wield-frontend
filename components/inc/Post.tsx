@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton } from "../base";
+import { Card, IconButton } from "../base";
 import Avatar from "../base/Avatar";
 import {
   Bookmark,
@@ -11,10 +11,12 @@ import {
 } from "../icons";
 import Image from "next/image";
 import Button from "../base/Button";
-import { useMid } from "../hooks/useMediaQuery";
+import { useMid } from "../utils/hooks/useMediaQuery";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
 const Post = () => {
   const [liked, setLiked] = React.useState(false);
+  const [showMenu,setShowMenu] = React.useState(false);
   const mid=useMid()
   return (
     <div className="font-montserrat w-full rounded-lg bg-white">
@@ -32,7 +34,16 @@ const Post = () => {
             28 March, 2022.
           </p>
         </div>
-        <IconButton icon={<Meatball />} color="white" />
+        <div className="relative">
+          <IconButton icon={<Meatball />} color="white" onClick={()=>setShowMenu(!showMenu)} />
+          <AnimatePresence exitBeforeEnter>
+            {
+              showMenu && (
+                <Menu/>
+              )
+            }
+          </AnimatePresence>
+        </div>
       </header>
       <main>
         <div className="relative aspect-video w-full">
@@ -115,3 +126,21 @@ const Post = () => {
 };
 
 export default Post;
+
+const Menu= ()=>{
+  return (
+    <motion.div
+      className="absolute right-0 z-10 "
+      initial={{ opacity: 0, y: "-20%" }}
+      animate={{ opacity: 1, y: "0" }}
+      exit={{ opacity: 0, y: "-20%" }}
+    >
+      <Card className="flex w-52 flex-col divide-y border shadow-lg  " px={'sm'}>
+        <h3 className="rounded-md py-2 px-1 hover:bg-[#ff695b21] font-medium">Bookmark Post</h3>
+        <h3 className="rounded-md py-2 px-1 hover:bg-[#ff695b21] font-medium">Hide Post</h3>
+        <h3 className="rounded-md py-2 px-1 hover:bg-[#ff695b21] font-medium">Mute notification</h3>
+        <h3 className="rounded-md py-2 px-1 hover:bg-[#ff695b21] font-medium">Report Post</h3>
+      </Card>
+    </motion.div>
+  );
+}

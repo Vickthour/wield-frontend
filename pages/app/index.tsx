@@ -1,5 +1,4 @@
-import Head from "next/head";
-import React from "react";
+import React, { useRef } from "react";
 import { Card } from "../../components/base";
 import AppBody from "../../components/inc/AppBody";
 import AppNav from "../../components/inc/AppNav";
@@ -14,7 +13,7 @@ const app = () => {
   return (
     <>
       <AppNav />
-      <AppBody>
+      <AppBody grid>
         <LeftPane />
         <MainPane>
           <StoryPane />
@@ -40,3 +39,5 @@ const app = () => {
 };
 
 export default app;
+
+

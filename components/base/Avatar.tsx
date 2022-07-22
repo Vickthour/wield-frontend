@@ -14,6 +14,10 @@ const AvatarBaseClasses = variantProps({
       sm: tw`h-8 w-8`,
       md: tw`h-12 w-12`,
       lg: tw`h-16 w-16`,
+      xl: tw`h-20 w-20`,
+      xxl: tw`h-24 w-24`,
+      wFull: tw`w-full h-auto`, 
+      hFull: tw`h-full w-auto`,
     },
     border: {
       primary: tw`border-2 bg-[#FF685B] border-[#FF685B]`,
@@ -59,21 +63,29 @@ const Avatar = ({ src, alt, ...props }: AvatarExtProps) => {
 };
 
 const StoryClassNames = variantProps({
-  base: "inline-flex rounded-full p-0.5",
+  base: "inline-flex rounded-full",
   variants: {
     size: {
       sm: "h-12 w-12",
       md: "h-16 w-16",
       lg: "h-24 w-24",
+      xl: "h-36 w-36",
     },
     state: {
       viewed: "bg-gray-300",
       notviewed: tw` bg-gradient-to-t from-[#ff685b] to-[#f4900c] `,
     },
+    padding: {
+      sm: tw`p-0.5 [&>div]:border-2`,
+      md: tw`p-1 [&>div]:border-[5px]`,
+      lg: tw`p-1.5 [&>div]:border-[7px]`,
+      xl: tw`p-2 [&>div]:border-[8px]`,
+    },
   },
   defaultVariants: {
     size: "md",
     state: "notviewed",
+    padding: "sm",
   },
 });
 type storyProps = JSX.IntrinsicElements["div"] &
@@ -82,7 +94,7 @@ type storyProps = JSX.IntrinsicElements["div"] &
 const Story = ({ src, alt, ...props }: storyProps) => {
   return (
     <div {...StoryClassNames(props)}>
-      <div className="relative w-full overflow-hidden  rounded-full border-2 border-white">
+      <div className="relative w-full overflow-hidden  rounded-full border-white">
         <Image
           src={src}
           className="max-w-full"
