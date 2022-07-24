@@ -1,27 +1,12 @@
-import React from 'react'
-import Activities from '../../components/inc/Activities';
-import AppBody from '../../components/inc/AppBody';
-import AppNav from '../../components/inc/AppNav';
-import ButtomNav from '../../components/inc/ButtomNav';
-import LeftPane from '../../components/inc/LeftPane';
-import MainPane from '../../components/inc/MainPane';
-import RightPane from '../../components/inc/RightPane';
+import React, { ReactElement } from "react";
+import Activities from "../../components/inc/Activities";
+import AppLayout from "../../components/layouts/AppLayout";
 
 const activities = () => {
-  return (
-    <>
-      <AppNav />
-      <AppBody grid>
+  return <Activities main />;
+};
 
-        <LeftPane />
-        <MainPane>
-            <Activities main/>
-        </MainPane>
-        <RightPane hide="activities" />
-      </AppBody>
-      <ButtomNav />
-    </>
-  );
-}
-
-export default activities
+activities.getLayout = function getLayout(page: ReactElement) {
+  return <AppLayout>{page}</AppLayout>;
+};
+export default activities;

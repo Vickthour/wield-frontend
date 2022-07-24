@@ -1,9 +1,6 @@
 import { variantProps, VariantPropsOf } from "classname-variants/react";
 import React, { FC, ComponentPropsWithoutRef, ElementType } from "react";
 
-type ButtonPoly<T extends ElementType> = {
-  as?: T;
-};
 interface iconProps {
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";

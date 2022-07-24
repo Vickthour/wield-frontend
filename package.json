@@ -20,8 +20,10 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.3",
+    "react-reverse-portal": "^2.1.0",
     "react-step-wizard": "^5.3.11",
-    "react-use-measure": "^2.1.1"
+    "react-use-measure": "^2.1.1",
+    "recharts": "^2.1.12"
   },
   "devDependencies": {
     "@types/node": "17.0.32",

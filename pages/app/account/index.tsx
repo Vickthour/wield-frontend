@@ -36,16 +36,13 @@ const DetailsItem = [
   },
 ];
 const account = () => {
+  
   return (
     <>
       <div className="col-span-3 hidden flex-1   lg:block">
         <Card>
           <h1 className="text-lg font-bold">Personal Details</h1>
-          <div className="flex flex-col gap-1">
-            {DetailsItem.map((item, index) => (
-              <InfoCard icon={item.icon} name={item.name} key={index} />
-            ))}
-          </div>
+          <LeftMenu/>
         </Card>
       </div>
       <MainPane>
@@ -70,6 +67,20 @@ const account = () => {
   );
 };
 
+
+const LeftMenu=()=>{
+
+  return (
+    <div
+     
+      className="flex flex-col "
+    >
+      {DetailsItem.map((item, index) => (
+        <InfoCard icon={item.icon} name={item.name} key={index} />
+      ))}
+    </div>
+  );
+}
 account.getLayout = function getLayout(page: ReactElement) {
   return <AccountLayout>{page}</AccountLayout>;
 };

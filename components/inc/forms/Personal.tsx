@@ -60,9 +60,9 @@ const Personal: FC<PersonalFormPropsExtended> = ({ goToStep }) => {
         register={register("full name", { required: "full name is required" })}
       />
       <ErrorMessage error={errors["full name"]?.message} />
-      <ListBox
+      <ListBox<PersonalInputs>
         label="Gender"
-        formName="gender"
+        name="gender"
         control={control}
         options={[
           { id: "M", name: "male" },
@@ -72,18 +72,18 @@ const Personal: FC<PersonalFormPropsExtended> = ({ goToStep }) => {
       <ErrorMessage error={errors.gender?.message} />
       <div className="flex w-full flex-col gap-2.5 md:flex-row">
         <div className="flex-1">
-          <ListBox
+          <ListBox<PersonalInputs>
             control={control}
-            formName="country"
+            name="country"
             label="Country"
             options={actualCountries}
           />
           <ErrorMessage error={errors.country?.message} />
         </div>
         <div className="flex-1">
-          <ListBox
+          <ListBox<PersonalInputs>
             label="State"
-            formName="state"
+            name="state"
             control={control}
             options={actualState}
           />

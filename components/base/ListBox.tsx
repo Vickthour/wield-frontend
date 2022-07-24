@@ -1,33 +1,34 @@
 import { Listbox, Menu, Transition } from "@headlessui/react";
+import { variantProps } from "classname-variants/react";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { Control, useController } from "react-hook-form";
+import { Control, useController, UseControllerProps } from "react-hook-form";
 
 interface options {
   id: string;
   name: string;
 }
-interface ListBoxProps {
+type ListBoxProps<T> = {
   label: string;
   options: options[];
   className?: string;
-  control: Control<any>;
-
-  formName: string;
-}
-export default function ListBox({
+} & UseControllerProps<T>;
+ const listBoxVariants= variantProps({
+  base:'',
+  variants:{
+    size:{
+      
+    }
+  }
+ })
+export default function ListBox<T>({
   label,
   options,
   className,
-  control,
-  formName,
-}: ListBoxProps) {
+  ...controlProps
+}: ListBoxProps<T>) {
   const {
     field: { value, onChange },
-  } = useController({
-    name: formName,
-    rules: { required: `${label} is required` },
-    control,
-  });
+  } = useController(controlProps);
   return (
     <Listbox
       value={value}
@@ -39,15 +40,19 @@ export default function ListBox({
     >
       <Listbox.Button
         type="button"
-        className={`relative flex w-full items-center justify-between rounded-full md:rounded-lg  border-2   px-4 py-5  text-gray-700 focus:outline-none  focus:border-orange-500   `}
+        className={`relative flex w-full items-center justify-between rounded-full border-2  px-4   py-5 text-gray-700  focus:border-orange-500 focus:outline-none  md:rounded-lg   `}
       >
-        {value ? (
-          <h3 className="absolute top-1 left-5 md:left-4 text-xs md:text-sm  text-orange-500">{label}</h3>
-        ) : (
-          ""
-        )}
-        {value ? value : label}
-        <ChevronDown />
+        <>
+          {value ? (
+            <h3 className="absolute top-1 left-5 text-xs text-orange-500 md:left-4  md:text-sm">
+              {label}
+            </h3>
+          ) : (
+            ""
+          )}
+          {value ? value : label}
+          <ChevronDown />
+        </>
       </Listbox.Button>
 
       <Transition
@@ -82,6 +87,7 @@ export default function ListBox({
   );
 }
 
+
 function ChevronDown() {
   return (
     <svg
@@ -98,3 +104,4 @@ function ChevronDown() {
     </svg>
   );
 }
+

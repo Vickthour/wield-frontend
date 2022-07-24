@@ -844,3 +844,25 @@ export const Edit = ({ size = "original", className }: iconProp) => {
     </svg>
   );
 };
+
+//37
+export const ArrowLeft = ({ size = "original", className }: iconProp) => {
+  return (
+    <svg
+      className={`${sizes[size]} ${className ? className : ""}`}
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.33335 1.3335L1.66669 6.00016M1.66669 6.00016L6.33335 10.6668M1.66669 6.00016H12.3334"
+        stroke="#2A2A2A"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

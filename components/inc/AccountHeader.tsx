@@ -121,9 +121,9 @@ const Tab = () => {
       >
         {TabItems.map((item, index) => {
           return (
-            <Link href={item.link} key={index}>
-              <button
-                className={`relative z-10 flex-1 border-b-2 py-3 text-xs font-medium transition-all duration-500 `}
+            <Link href={item.link} key={index} passHref>
+              <a
+                className={`relative text-center z-10 flex-1 border-b-2 py-3 text-xs font-medium transition-all duration-500 `}
                 // onClick={() => setActive?.(item.name)}
                 onMouseOver={() => hoverItem(item.name)}
                 onMouseLeave={resetHover}
@@ -142,7 +142,7 @@ const Tab = () => {
                     layoutId="underline"
                   ></motion.div>
                 ) : null}
-              </button>
+              </a>
             </Link>
           );
         })}
