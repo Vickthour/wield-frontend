@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { ReactNode,useState } from "react";
 
-export  const InfoCard = ({ name, icon }: { name: string; icon: ReactNode }) => {
+export  const InfoCard = ({ name, icon }: { name: string; icon: ReactNode}) => {
   const [hoveredTab,setHoveredTab] = useState<boolean>(false);
   const resetHover=()=>setHoveredTab(false);
   const hoverItem=()=>setHoveredTab(true);
@@ -13,10 +13,10 @@ export  const InfoCard = ({ name, icon }: { name: string; icon: ReactNode }) => 
     >
       {icon}
       <h1 className="z-20 font-medium">{name}</h1>
-      {hoveredTab && (
+      {(hoveredTab )&& (
         <motion.div
           className=" absolute inset-0 z-10 rounded-lg bg-[#ff695b20]"
-          layoutId="hvbg"
+          layoutId="hover-bg"
         ></motion.div>
       )}
     </div>
