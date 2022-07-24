@@ -1,11 +1,10 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState} from "react";
 import { useMid } from "../utils/hooks/useMediaQuery";
 
 import { Card, Avatar, Button, IconButton } from "../base";
 import { Camera, Coin, Crown, Plus } from "../icons";
 import Link from 'next/link'
 import { motion } from "framer-motion";
-import { TabContext } from "../layouts/AccountLayout";
 import { useRouter } from "next/router";
 const AccountHeader = () => {
   const isMid = useMid();
@@ -103,73 +102,6 @@ const TabItems = [
   },
 ];
 
-// const Tab = () => {
-//   const [tabBoundingBox, setTabBoundingBox] = useState<any>(null);
-//   const [wrapperBoundingBox, setWrapperBoundingBox] = useState<any>(null);
-//   const [highlightedTab, setHighlightedTab] = useState<any>(null);
-//   const [isHoveredFromNull, setIsHoveredFromNull] = useState(true);
-//   const { active, setActive } = { ...useContext(TabContext) };
-
-//   const highlightRef = React.useRef(null);
-//   const wrapperRef = React.useRef<any>(null);
-
-//   const repositionHighlight = (
-//     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-//     tab: any
-//   ) => {
-//     setTabBoundingBox(e.currentTarget.getBoundingClientRect());
-//     setWrapperBoundingBox(wrapperRef.current.getBoundingClientRect());
-//     setIsHoveredFromNull(!highlightedTab);
-//     setHighlightedTab(tab);
-//   };
-
-//   const resetHighlight = () => setHighlightedTab(null);
-
-//   const highlightStyles: React.CSSProperties = {};
-
-//   if (tabBoundingBox && wrapperBoundingBox) {
-//     highlightStyles.transitionDuration = isHoveredFromNull ? "0ms" : "150ms";
-//     highlightStyles.opacity = highlightedTab ? 1 : 0;
-//     highlightStyles.width = `${tabBoundingBox.width}px`;
-//     highlightStyles.transform = `translate(${
-//       tabBoundingBox.left - wrapperBoundingBox.left
-//     }px)`;
-//   }
-//   return (
-//     <footer className="py-1">
-//       <div
-//         className="relative mx-auto flex max-w-3xl"
-//         ref={wrapperRef}
-//         onMouseLeave={resetHighlight}
-//       >
-//         <div
-//           className="absolute left-0 z-0 h-full rounded-lg bg-[#fb60524a]"
-//           ref={highlightRef}
-//           style={highlightStyles}
-//         ></div>
-//         {TabItems.map((item, index) => {
-//           return (
-//             <button
-//               key={index}
-//               className={` relative z-10 flex-1 border-b-2 py-3 text-xs font-medium transition-all duration-500 `}
-//               onMouseOver={(ev) => repositionHighlight(ev, item)}
-//               onClick={() => setActive?.(item.name)}
-//             >
-//               {item.name}
-//               {active === item.name ? (
-//                 <motion.div
-//                   className=" absolute -bottom-1 left-0 right-0
-//                    h-1 bg-primaryColor z-10"
-//                   layoutId="underline"
-//                 ></motion.div>
-//               ) : null}
-//             </button>
-//           );
-//         })}
-//       </div>
-//     </footer>
-//   );
-// };
 const Tab = () => {
   const router=useRouter()
   const {pathname}=router
@@ -189,9 +121,9 @@ const Tab = () => {
       >
         {TabItems.map((item, index) => {
           return (
-            <Link href={item.link} key={index}>
-              <button
-                className={`relative z-10 flex-1 border-b-2 py-3 text-xs font-medium transition-all duration-500 `}
+            <Link href={item.link} key={index} passHref>
+              <a
+                className={`relative text-center z-10 flex-1 border-b-2 py-3 text-xs font-medium transition-all duration-500 `}
                 // onClick={() => setActive?.(item.name)}
                 onMouseOver={() => hoverItem(item.name)}
                 onMouseLeave={resetHover}
@@ -210,7 +142,7 @@ const Tab = () => {
                     layoutId="underline"
                   ></motion.div>
                 ) : null}
-              </button>
+              </a>
             </Link>
           );
         })}
