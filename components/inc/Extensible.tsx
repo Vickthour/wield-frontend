@@ -13,7 +13,6 @@ const Extensible: FC<ExtensibleProps> = ({
 }) => {
   const itemRef = createRef<HTMLDivElement>();
   const [isOverflowing, setIsOverflowing] = React.useState(false);
-  console.log(isOverflowing);
   useEffect(() => {
     setIsOverflowing(
       (itemRef.current?.scrollWidth || false) >
