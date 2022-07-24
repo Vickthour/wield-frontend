@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
+    "@lottiefiles/react-lottie-player": "^3.4.7",
     "classname-variants": "^1.2.1",
     "country-state-city": "^3.0.1",
     "framer-motion": "^6.3.11",

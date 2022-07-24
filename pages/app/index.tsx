@@ -1,21 +1,41 @@
-import * as React from "react";
-import NewPost from "../../components/inc/NewPost";
+import React from "react";
+import {Card} from "../../components/base";
+import AppBody from "../../components/inc/AppBody";
+import AppNav from "../../components/inc/AppNav";
+import ButtomNav from "../../components/inc/ButtomNav";
+import LeftPane from "../../components/inc/LeftPane";
+import MainPane from "../../components/inc/MainPane";
 import Post from "../../components/inc/Post";
-import StoryPane from "../../components/inc/StoryPane";
-import AppLayout from "../../components/layouts/AppLayout";
+import RightPane from "../../components/inc/RightPane";
 
 const app = () => {
-  return (
-    <>
-      <StoryPane />
-      <NewPost/>
-      <Post />
-      <Post />
-    </>
-  );
+    return (
+        <>
+            <AppNav/>
+            <AppBody grid>
+                <LeftPane/>
+                <MainPane>
+                    <Card>
+                        <label htmlFor="NewPost" className="text-lg font-semibold">
+                            New Post
+                        </label>
+                        <input
+                            id="NewPost"
+                            type={"text"}
+                            placeholder="What are you posting today, James?"
+                            className="h-10 w-full rounded-full bg-gray-200   pl-4"
+                        />
+                    </Card>
+                    <Post/>
+                    <Post/>
+                </MainPane>
+                <RightPane hide="none"/>
+            </AppBody>
+            <ButtomNav/>
+        </>
+    );
 };
 
-app.getLayout = function getLayout(page: React.ReactElement) {
-  return <AppLayout>{page}</AppLayout>;
-};
 export default app;
+
+
