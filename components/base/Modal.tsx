@@ -3,13 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import modalContext from "../context/modalContext";
 import * as portals from "react-reverse-portal";
 
-
 interface modalProps {
   children: React.ReactNode;
   open: boolean;
-  onClose: () => void;
+  onClose:
+    | (() => void)
+    | ((
+        e: React.MouseEvent<HTMLDivElement | HTMLButtonElement, MouseEvent>
+      ) => void);
 }
-
 
 const Modal: FC<modalProps> = ({ open, onClose, children }) => {
   const modalCtx = useContext(modalContext);
