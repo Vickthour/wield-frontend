@@ -7,8 +7,12 @@ import { useRouter } from "next/router";
 import { useQueryState } from "../../../components/utils/hooks";
 import {
   AccountSettingTab,
+  HelpSettingTab,
   PaymentMethodsTab,
+  PrivacySettingTab,
+  ThemeSettingTab,
 } from "../../../components/inc/settingTabs";
+import NotificationSettingTab from "../../../components/inc/settingTabs/NotificationSettingTab";
 
 const tabs = [
   {
@@ -72,7 +76,10 @@ const Settings = () => {
         <AnimatePresence exitBeforeEnter>
           {activeTab === "Account" && <AccountSettingTab />}
           {activeTab === "Payment methods" && <PaymentMethodsTab />}
-          {activeTab === "Privacy and Security" && <PaymentMethodsTab />}
+          {activeTab === "Privacy and Security" && <PrivacySettingTab />}
+          {activeTab === "Themes and Languages" && <ThemeSettingTab />}
+          {activeTab === "Notifications" && <NotificationSettingTab />}
+          {activeTab === "Help" && <HelpSettingTab />}
         </AnimatePresence>
       </div>
     </Card>

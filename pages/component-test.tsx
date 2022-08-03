@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "../components/base";
 import Avatar from "../components/base/Avatar";
-import BaseModal from "../components/base/BaseModal";
+
 import Button from "../components/base/Button";
 import Modal from "../components/base/Modal";
 import { EmailIcon } from "../components/icons";
@@ -60,12 +60,7 @@ const ComponentTest = () => {
         />
         <div className="z-1 relative translate-x-1 translate-y-4">
           <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
-          {/* <BaseModal
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-            modalBody="Test Body"
-            modalTitle="test 001 002"
-          /> */}
+
           <Modal open={isOpen} onClose={()=>setIsOpen(false)}>
             <Card>
               Hello
