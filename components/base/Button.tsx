@@ -8,14 +8,14 @@ interface iconProps {
 
 const tw = String.raw;
 const buttonClasses = variantProps({
-  base: tw`inline-flex items-center  focus:outline-none transition ease-in-out duration-300 active:scale-95 `,
+  base: tw`inline-flex items-center   focus:outline-none transition ease-in-out duration-300 active:scale-95 `,
   variants: {
     size: {
       xs: tw`px-1 py-0.5 text-xs`,
       sm: tw`px-2 py-1 text-sm`,
-      md: "px-4 py-2",
-      lg: "px-8 py-3 text-lg",
-      full: "w-full justify-center  py-2",
+      md: "px-4 py-2 font-medium",
+      lg: "px-8 py-3 text-lg font-medium",
+      full: "w-full justify-center font-medium py-2",
     },
     color: {
       primary: "bg-primaryColor text-white",
@@ -27,7 +27,7 @@ const buttonClasses = variantProps({
       true: "opacity-50 cursor-not-allowed",
     },
     shape: {
-      rounded: tw`rounded-2xl`,
+      rounded: tw`rounded-xl`,
       pill: tw`rounded-full`,
       square: tw`rounded-none`,
     },
@@ -64,7 +64,7 @@ const buttonClasses = variantProps({
         color: "gray",
         outlined: true,
       },
-      className: tw`border-gray-700 bg-[transparent] text-gray-700 hover:bg-gray-700 hover:text-white`,
+      className: tw`border-gray-700 bg-[transparent] text-black hover:bg-gray-700 hover:text-white`,
     },
     {
       variants: { shape: "rounded", size: "xs" },
