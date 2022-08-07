@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Card } from "../../../components/base";
+import { Card } from "@components/base";
 import {
   Location,
   EmailIcon,
@@ -7,11 +7,11 @@ import {
   Globe,
   ConnectionIcon,
   FacebookIcon,
-} from "../../../components/icons";
-import { MainPane, Post } from "../../../components/inc";
-import Connections from "../../../components/inc/Connections";
-import { InfoCard } from "../../../components/inc/InfoCard";
-import AccountLayout from "../../../components/layouts/AccountLayout";
+} from "@components/icons";
+import { MainPane, Post } from "@components/inc";
+import Connections from "@components/inc/Connections";
+import { InfoCard } from "@components/inc/InfoCard";
+import AccountLayout from "@components/layouts/AccountLayout";
 
 const DetailsItem = [
   {
