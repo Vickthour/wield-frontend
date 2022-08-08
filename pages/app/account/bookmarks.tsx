@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
-import { Card } from "../../../components/base";
-import { Post } from "../../../components/inc";
-import AccountLayout from "../../../components/layouts/AccountLayout";
+import { Card } from "@components/base";
+import { Post } from "@components/inc";
+import AccountLayout from "@components/layouts/AccountLayout";
 
 const Bookmark = () => {
   return (

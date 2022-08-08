@@ -97,6 +97,10 @@ const TabItems = [
     link:"/app/account/bookmarks"
   },
   {
+    name: "Wallet",
+    link:"/app/account/wallet"
+  },
+  {
     name: "Settings",
     link:"/app/account/settings"
   },

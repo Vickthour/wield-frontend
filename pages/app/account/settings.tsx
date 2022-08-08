@@ -1,18 +1,18 @@
-import { Card } from "../../../components/base";
-import { ChevronLeft } from "../../../components/icons";
+import { Card } from "@components/base";
+import { ChevronLeft } from "@components/icons";
 import React, { ReactElement } from "react";
-import AccountLayout from "../../../components/layouts/AccountLayout";
+import AccountLayout from "@components/layouts/AccountLayout";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { useQueryState } from "../../../components/utils/hooks";
+import { useQueryState } from "@components/utils/hooks";
 import {
   AccountSettingTab,
   HelpSettingTab,
   PaymentMethodsTab,
   PrivacySettingTab,
   ThemeSettingTab,
-} from "../../../components/inc/settingTabs";
-import NotificationSettingTab from "../../../components/inc/settingTabs/NotificationSettingTab";
+} from "@components/inc/settingTabs";
+import NotificationSettingTab from "@components/inc/settingTabs/NotificationSettingTab";
 
 const tabs = [
   {

@@ -78,7 +78,7 @@ const Password = ({ id, label, register, showIcon }: PasswordProps) => {
     );
   }
   return (
-    <div className="relative flex items-center overflow-hidden rounded-full  py-2 px-1 focus-within:border-orange-500 border-2 md:rounded-lg md:py-4 md:px-2">
+    <div className="relative flex items-center overflow-hidden rounded-full  border-2 py-2 px-1 focus-within:border-orange-500 md:rounded-lg md:py-4 md:px-2">
       <input
         id={id}
         className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent focus:outline-none"
@@ -164,7 +164,7 @@ const Icon = ({ id, label, type, icon, register }: IconProps) => {
 };
 const TextField = ({ id, label, register }: InputProps) => {
   return (
-    <div className="font-roboto relative flex items-center overflow-hidden rounded-lg py-2 px-1 focus-within:border-orange-500 border-2 md:pt-5 md:pb-4 md:px-2">
+    <div className="font-roboto relative flex items-center overflow-hidden rounded-lg border-2 py-2 px-1 focus-within:border-orange-500 md:px-2 md:pt-5 md:pb-4">
       <textarea
         id={id}
         rows={4}
@@ -181,13 +181,7 @@ const TextField = ({ id, label, register }: InputProps) => {
     </div>
   );
 };
-const Input = ({
-  id,
-  label,
-
-  type,
-  register,
-}: InputProps) => {
+const Input = ({ id, label, type, register }: InputProps) => {
   return (
     <div className="font-roboto relative flex items-center overflow-hidden rounded-full border-2 py-2  px-1 focus-within:border-orange-500 md:rounded-lg md:px-2 md:pt-5 md:pb-4">
       <input
@@ -207,8 +201,27 @@ const Input = ({
   );
 };
 
+const BareInput = ({
+  id,
+  type,
+  className,
+}: {
+  id: string;
+  type?: React.HTMLInputTypeAttribute;
+  className?:string;
+}) => {
+  return (
+    <input
+      type={type ?? "text"}
+      id={id}
+      className={`${className??''} ring-none rounded-md border border-gray-300 py-4 px-2 outline-none focus:border-2 focus:border-orange-400 `}
+    />
+  );
+};
+
 Input.Password = Password;
 Input.Icon = Icon;
 Input.TextField = TextField;
+Input.Bare = BareInput;
 
 export default Input;

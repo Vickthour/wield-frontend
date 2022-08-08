@@ -1,4 +1,4 @@
-import { Button, Card, IconButton,Modal } from "../../base";
+import { Button, Card, IconButton, Modal } from "../../base";
 import SettingHeader from "../../layouts/settingHeader";
 import React, { useState } from "react";
 import { Edit } from "../../icons";
@@ -14,9 +14,11 @@ const AccountInformation = ({
       sub
       onSubClick={() => setTab("main")}
     >
-      {Edittable.map((Edit) => {
-        return <InforEditor key={Edit.id} {...Edit} />;
-      })}
+      <div className="info-grid">
+        {Edittable.map((Edit) => {
+          return <InforEditor key={Edit.id} {...Edit} />;
+        })}
+      </div>
     </SettingHeader>
   );
 };
@@ -27,8 +29,8 @@ const InforEditor = ({ label, value }: { label: string; value: string }) => {
   };
 
   return (
-    <div className="flex w-full items-center gap-4">
-      <label>{label}</label>
+    <>
+      <label className="self-center">{label}</label>
       <input
         type="text"
         className="h-12 flex-1 rounded-md bg-gray-300 pl-4 font-medium capitalize"
@@ -71,7 +73,7 @@ const InforEditor = ({ label, value }: { label: string; value: string }) => {
           </div>
         </Card>
       </Modal>
-    </div>
+    </>
   );
 };
 

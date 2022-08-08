@@ -1,7 +1,7 @@
-import React from 'react'
-import { MoreOptions } from '..';
-import { ArrowAngled } from '../../icons';
-import SettingHeader from '../../layouts/settingHeader'
+import React from "react";
+import { MoreOptions } from "..";
+import { ArrowAngledUp } from "../../icons";
+import SettingHeader from "../../layouts/settingHeader";
 
 const PrivacySettingTab = () => {
   return (
@@ -11,10 +11,10 @@ const PrivacySettingTab = () => {
     >
       <MoreOptions name="Two-factor authentication" />
       <MoreOptions name="Activities (Who can see your posts)" />
-      <MoreOptions name="Blocked"/>
-      <MoreOptions name="Privacy Policy" icon={<ArrowAngled/>}/>
+      <MoreOptions name="Blocked" />
+      <MoreOptions name="Privacy Policy" icon={<ArrowAngledUp />} />
     </SettingHeader>
   );
-}
+};
 
-export default PrivacySettingTab
+export default PrivacySettingTab;
