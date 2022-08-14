@@ -77,7 +77,7 @@ const Login = () => {
             >
               <span className="w-full">Submit</span>
             </button>
-            <Link href="/register" passHref>
+            <Link href="/app" passHref>
               <a
                 href="#"
                 className="origin-center rounded-full bg-transparent bg-white px-8 py-4 text-center text-base font-semibold  capitalize text-blackShade shadow-md transition duration-200 ease-in hover:bg-white hover:text-black focus:outline-none focus:ring-2 active:scale-95 md:px-10 md:py-5 lg:px-16"
