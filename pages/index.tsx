@@ -56,7 +56,7 @@ media influencing.e"
               />
             </div>
             <Link href="/login" passHref className="">
-              <a className="hover:bg-primaryLighterColor mr-4 hidden origin-center rounded-full border-2 border-white bg-transparent py-1.5 px-2 text-sm uppercase text-white transition-all hover:bg-white hover:font-semibold hover:text-black active:scale-95 md:inline md:py-2 md:px-4 md:text-base">
+              <a href="#" className="hover:bg-primaryLighterColor mr-4 hidden origin-center rounded-full border-2 border-white bg-transparent py-1.5 px-2 text-sm uppercase text-white transition-all hover:bg-white hover:font-semibold hover:text-black active:scale-95 md:inline md:py-2 md:px-4 md:text-base">
                 Get started
               </a>
             </Link>

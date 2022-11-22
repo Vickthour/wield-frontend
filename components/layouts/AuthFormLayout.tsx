@@ -38,13 +38,13 @@ const AuthFormLayout: FC<AuthForm> = ({ children }) => {
           <div className="order-2 hidden md:order-1 md:flex md:h-full md:flex-col xl:col-span-3">
             <div className="flex items-center justify-center md:flex-[4] md:items-end overflow-hidden">
               <AnimatePresence exitBeforeEnter>
-                <motion.div key={activeIndex} initial={{opacity:0,x:'50%'}} animate={{opacity:1,x:0}} exit={{opacity:0,x:'-50%'}} >
+                <motion.div key={activeIndex} initial={{opacity:0,x:'40%'}} animate={{opacity:1,x:0}} exit={{opacity:0,x:'-50%'}} >
                   <CurrentImage  />
                 </motion.div>
               </AnimatePresence>
             </div>
             <div className="md:flex-[2] ">
-              <div className="flex  w-full items-center justify-center gap-4">
+              <div className="flex w-full items-center justify-center gap-4">
                 {CarouselImages.map((image, index) => (
                   <Dots
                     active={activeIndex === index}

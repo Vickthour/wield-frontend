@@ -22,7 +22,7 @@ const Password = ({ id, label, register, showIcon }: PasswordProps) => {
         </label>
         <input
           id={id}
-          className="peer h-10 w-full pl-4 text-gray-900 placeholder-transparent  focus:outline-none"
+          className="peer h-4 w-6 pl-2 text-gray-900 placeholder-transparent  focus:outline-none"
           {...register}
           type={showPass ? "text" : "password"}
           placeholder={label}
@@ -36,7 +36,7 @@ const Password = ({ id, label, register, showIcon }: PasswordProps) => {
         {showPass ? (
           <label
             htmlFor={id}
-            className="grid h-full place-items-center peer-placeholder-shown:hidden"
+            className="grid h-6 place-items-center peer-placeholder-shown:hidden"
             onClick={() => setShowPass(false)}
           >
             <svg
@@ -81,7 +81,7 @@ const Password = ({ id, label, register, showIcon }: PasswordProps) => {
     <div className="relative flex items-center overflow-hidden rounded-full  border-2 py-2 px-1 focus-within:border-orange-500 md:rounded-lg md:py-4 md:px-2">
       <input
         id={id}
-        className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent focus:outline-none"
+        className="peer h-4 w-6  pl-2 text-gray-900 placeholder-transparent focus:outline-none"
         {...register}
         type={showPass ? "text" : "password"}
         placeholder={label}
@@ -149,7 +149,7 @@ const Icon = ({ id, label, type, icon, register }: IconProps) => {
       <input
         id={id}
         type={type}
-        className="peer h-10 w-full  pl-4 text-gray-900 placeholder-transparent  focus:outline-none"
+        className="peer h-4 w-6  pl-2 text-gray-900 placeholder-transparent  focus:outline-none"
         {...register}
         placeholder={label}
       />
@@ -168,7 +168,7 @@ const TextField = ({ id, label, register }: InputProps) => {
       <textarea
         id={id}
         rows={4}
-        className="peer h-10 min-h-[90px] w-full pt-2 pl-4 text-gray-900  placeholder-transparent focus:outline-none"
+        className="peer h-6 min-h-[90px4 w-6 pt-2 pl-2 text-gray-900  placeholder-transparent focus:outline-none"
         {...register}
         placeholder={label}
       />
@@ -187,7 +187,7 @@ const Input = ({ id, label, type, register }: InputProps) => {
       <input
         id={id}
         type={type}
-        className="peer h-10 w-full   pl-4 text-gray-900 placeholder-transparent focus:outline-none"
+        className="peer h-4 w-6   pl-2 text-gray-900 placeholder-transparent focus:outline-none"
         {...register}
         placeholder={label}
       />

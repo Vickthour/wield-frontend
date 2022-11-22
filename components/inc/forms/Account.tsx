@@ -36,7 +36,7 @@ const Account: FC<Partial<StepWizardChildProps> & AccountFormProps> = ({
   });
 
   return (
-    <form className="mt-4 space-y-2.5" onSubmit={onSubmit}>
+    <form className="mt-2 space-y-1.5" onSubmit={onSubmit}>
       {" "}
       <Input
         label="Email Address"
